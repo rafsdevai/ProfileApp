@@ -1,0 +1,203 @@
+export const ro = {
+  languageName: "Romana",
+  nav: {
+    aria: "Navigare principala",
+    openMenu: "Deschide meniul de navigare",
+    items: [
+      { label: "Acasa", href: "#home" },
+      { label: "Despre", href: "#about" },
+      { label: "Servicii", href: "#services" },
+      { label: "Proiecte", href: "#work" },
+      { label: "Mentorat", href: "#mentoring" },
+    ],
+    contact: "Contact",
+  },
+  hero: {
+    badge: "Solutii AI • Aplicatii Web • Mentorat Informatica",
+    headline: [
+      "Sisteme AI si aplicatii web",
+      "pentru nevoi reale de business",
+    ],
+    subtitle:
+      "Construiesc sisteme AI practice, aplicatii web moderne si ofer mentorat structurat pentru proiecte de certificare la Informatica.",
+    primaryCta: "Programeaza o consultatie gratuita",
+    secondaryCta: "Discutam proiectul",
+    trust: ["Sisteme AI", "Web Apps", "Automatizare", "Mentorat"],
+    portraitAlt:
+      "Portret Rafael Stefanache, AI Automation Developer si Full-Stack Developer Romania",
+    portraitAria: "Zona portretului principal",
+    workflowLabel: "Flux AI",
+    workflowSteps: [
+      "Input utilizator",
+      "Cautare embeddings",
+      "Baza vectoriala",
+      "Raspuns LLM",
+      "Trigger automatizare",
+    ],
+    statusTitle: "Status sistem",
+    statusOnline: "Online",
+    statusProgress: "Construiesc viitorul",
+    mobileNote: "Sisteme AI, interfete rafinate",
+  },
+  about: {
+    badges: ["Endava", "AI Engineer"],
+    title: "Despre mine",
+    paragraphs: [
+      "Sunt AI Engineer si full-stack developer, concentrat pe sisteme AI practice, custom web applications si solutii tehnice structurate.",
+      "Lucrez cu startup-uri, business-uri si elevi ca FastAPI Developer, SaaS Developer si mentor pentru Atestat Informatica, creand software curat, modern si orientat spre rezultate.",
+    ],
+    stackTitle: "Tech Stack",
+    currentStack: [
+      "FastAPI",
+      "OpenAI APIs",
+      "LangChain",
+      "React",
+      "PostgreSQL",
+      "RAG",
+      "Automatizare",
+    ],
+    eyebrow: "Expertiza",
+    servicesTitle: "Servicii principale",
+    servicesSubtitle:
+      "Solutii practice pentru business-uri, startup-uri si elevi.",
+    services: [
+      {
+        title: "Solutii AI",
+        description:
+          "Sisteme practice de AI workflow automation care ajuta business-urile sa lucreze mai rapid si mai inteligent.",
+        cta: "Discutam proiectul",
+        tags: ["AI", "Automatizare", "RAG"],
+      },
+      {
+        title: "Aplicatii Web",
+        description:
+          "Custom web applications si platforme SaaS scalabile, construite pentru utilizare reala in business.",
+        cta: "Construim produsul",
+        tags: ["React", "FastAPI", "SaaS"],
+      },
+      {
+        title: "Mentorat Informatica",
+        description:
+          "Informatics mentoring Romania pentru elevii care construiesc proiectul de Atestat Informatica.",
+        cta: "Incepe mentoratul",
+        tags: ["Atestat", "Ghidare", "Programare"],
+      },
+    ],
+  },
+  projects: {
+    title: "Proiecte selectate",
+    viewAll: "Vezi toate proiectele ->",
+    viewCaseStudy: "Vezi studiul de caz",
+    githubAria: "repository GitHub",
+    liveAria: "demo live",
+    items: [
+      {
+        title: "RAG Chatbot",
+        category: "Sistem AI principal",
+        statement:
+          "Sistem de cautare semantica AI pentru acces mai rapid la cunostinte interne.",
+        stack: ["RAG", "FastAPI", "React", "Cautare vectoriala"],
+      },
+      {
+        title: "AI Medical Triage",
+        category: "Workflow AI",
+        statement:
+          "Workflow de suport decizional pentru trierea si prioritizarea simptomelor.",
+        stack: ["AI", "NLP", "FastAPI"],
+      },
+      {
+        title: "AI Team Matcher",
+        category: "Automatizare",
+        statement:
+          "Automatizare de matching care imbunatateste formarea echipelor folosind semnale de skill.",
+        stack: ["AI", "React", "API"],
+      },
+      {
+        title: "Smart Librarian AI",
+        category: "Asistent AI",
+        statement:
+          "Platforma de automatizare pentru cautare inteligenta in catalog si recomandari.",
+        stack: ["NLP", "Automatizare", "Python"],
+      },
+    ],
+  },
+  cta: {
+    title: "Alege serviciul potrivit pentru urmatorul pas.",
+    subtitle:
+      "Sisteme AI, aplicatii web si mentorat la Informatica, construite cu claritate si executie practica.",
+    button: "Discutam proiectul",
+    checklist: [
+      "Solutii AI pentru automatizare si suport decizional",
+      "Aplicatii Web pentru produse si instrumente interne",
+      "Mentorat Informatica pentru pregatirea certificarii",
+    ],
+  },
+  testimonials: {
+    eyebrow: "Dovada sociala",
+    title: "De incredere pentru elevi, startup-uri si echipe",
+    items: [
+      {
+        name: "Alex Popa",
+        role: "Fondator startup",
+        context: "Startup HealthTech la inceput",
+        quote:
+          "Rafael a luat ideea noastra AI destul de neclara si ne-a ajutat sa o transformam in ceva ce puteam testa cu utilizatori. A fost rapid, clar si sincer despre ce conta.",
+        initials: "AP",
+        result: "MVP AI livrat",
+      },
+      {
+        name: "Irina Matei",
+        role: "Product Manager",
+        context: "Colaborare pe proiect client",
+        quote:
+          "Mi-a placut cel mai mult cat de calm a gestionat partile neclare. A inteles obiectivul produsului, a explicat optiunile clar si a livrat curat.",
+        initials: "IM",
+        result: "Livrare de incredere",
+      },
+      {
+        name: "Andrei Marinescu",
+        role: "Elev la informatica",
+        context: "Mentorat Atestat Informatica",
+        quote:
+          "Sedintele au fost practice si usor de urmarit. Am incetat sa copiez cod si am inceput sa inteleg cu adevarat ce face proiectul meu.",
+        initials: "AM",
+        result: "Pregatit pentru atestat",
+      },
+    ],
+  },
+  consultation: {
+    badge: "Consultatie gratuita de 30 de minute",
+    title: "Hai sa discutam proiectul tau",
+    description:
+      "Un call concentrat pentru startup-uri, business-uri si elevi care au nevoie de ghidare pentru sisteme AI, aplicatii web sau mentorat la Informatica.",
+    bullets: [
+      "Sisteme AI & automatizare",
+      "Planificare aplicatii web",
+      "Arhitectura SaaS & API",
+      "Mentorat Informatica",
+    ],
+    note: "Directie tehnica clara pentru urmatorul tau pas.",
+    primaryCta: "Programeaza o consultatie gratuita",
+    secondaryCta: "Vezi serviciile",
+  },
+  contact: {
+    availabilityBadge: "Disponibil pentru AI, web si mentorat",
+    title: "Contact & Disponibilitate",
+    subtitle:
+      "Disponibil pentru sisteme AI, aplicatii web si mentorat la Informatica.",
+    responseTime: "Raspund de obicei in maximum 24 de ore",
+    primaryCta: "Programeaza o consultatie gratuita",
+    secondaryCta: "Discutam proiectul",
+    details: [
+      { label: "Email", value: "rafs.dev.ai@gmail.com" },
+      { label: "Locatie", value: "Romania" },
+      { label: "Disponibilitate", value: "Deschis pentru proiecte & mentorat" },
+      { label: "Timp de raspuns", value: "De obicei in maximum 24 de ore" },
+    ],
+    quickTitle: "Contact rapid",
+    quickLinks: ["LinkedIn", "GitHub", "Calendly", "WhatsApp"],
+    brandStatement: "AI engineering, product development si mentorat practic.",
+    copyright: "© 2026 Rafael Stefanache. Toate drepturile rezervate.",
+    footerServices: "Solutii AI / Aplicatii Web / Mentorat Informatica",
+  },
+} as const;

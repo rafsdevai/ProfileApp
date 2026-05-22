@@ -56,8 +56,8 @@ export function Hero() {
       <div className="absolute left-[48%] top-24 -z-10 h-52 w-80 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[90px]" />
       <div className="absolute right-[16%] top-14 -z-10 h-72 w-96 rounded-full bg-blue-600/10 blur-[120px]" />
 
-      <div className="relative z-20 mx-auto grid max-w-6xl items-center gap-6 px-5 pb-8 pt-8 sm:gap-8 sm:px-6 md:min-h-[588px] lg:grid-cols-[0.45fr_0.55fr] lg:gap-10 lg:px-8 lg:pb-11 lg:pt-7">
-        <div className="relative z-20 mx-auto max-w-[34rem] text-center lg:mx-0 lg:text-left">
+      <div className="relative z-20 mx-auto grid max-w-6xl items-center gap-6 px-5 pb-8 pt-8 sm:gap-8 sm:px-6 md:min-h-[588px] lg:px-8 xl:grid-cols-[0.45fr_0.55fr] xl:gap-10 xl:pb-11 xl:pt-7">
+        <div className="relative z-20 mx-auto max-w-[34rem] text-center xl:mx-0 xl:text-left">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-500/[0.08] px-3 py-1.5 text-[11px] font-semibold uppercase text-blue-300 shadow-[0_0_30px_rgba(37,99,235,0.2)] backdrop-blur-xl">
               <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.9)]" />
@@ -66,20 +66,20 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="mx-auto mt-8 max-w-[33.5rem] text-balance text-[1.55rem] font-bold leading-[1.08] text-white drop-shadow-[0_12px_34px_rgba(0,0,0,0.3)] min-[390px]:text-[1.68rem] sm:mt-9 sm:text-[2.35rem] sm:leading-[1.1] lg:mx-0 lg:text-[2.75rem] xl:text-[2.95rem]">
+            <h1 className="mx-auto mt-8 max-w-[33.5rem] text-balance text-[1.55rem] font-bold leading-[1.08] text-white drop-shadow-[0_12px_34px_rgba(0,0,0,0.3)] min-[390px]:text-[1.68rem] sm:mt-9 sm:text-[2.35rem] sm:leading-[1.1] lg:text-[2.65rem] xl:mx-0 xl:text-[2.95rem]">
               {t.hero.headline[0]}
               <span className="block">{t.hero.headline[1]}</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
-            <p className="mx-auto mt-8 max-w-[33rem] text-[0.95rem] leading-7 text-slate-300 sm:text-base sm:leading-8 lg:mx-0">
+            <p className="mx-auto mt-8 max-w-[33rem] text-[0.95rem] leading-7 text-slate-300 sm:text-base sm:leading-8 xl:mx-0">
               {t.hero.subtitle}
             </p>
           </Reveal>
 
           <Reveal delay={0.24}>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4 lg:justify-start">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4 xl:justify-start">
               <Button
                 asChild
                 size="lg"
@@ -105,7 +105,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.32}>
-            <div className="mt-7 flex justify-center sm:mt-8 lg:justify-start">
+            <div className="mt-7 flex justify-center sm:mt-8 xl:justify-start">
               <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-white/10 bg-slate-950/35 px-3.5 py-2 text-[13px] font-medium text-slate-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-xl sm:flex-nowrap sm:text-sm">
                 {t.hero.trust.map((item, index) => (
                   <span
@@ -124,7 +124,7 @@ export function Hero() {
         </div>
 
         <div
-          className="relative mt-1 min-h-[218px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-slate-950/30 shadow-[0_24px_90px_rgba(15,23,42,0.45)] min-[390px]:min-h-[238px] sm:-mt-2 sm:min-h-[340px] lg:mt-0 lg:min-h-[490px] lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none"
+          className="relative mx-auto mt-1 min-h-[218px] w-full max-w-[46rem] overflow-hidden rounded-[1.35rem] border border-white/10 bg-slate-950/30 shadow-[0_24px_90px_rgba(15,23,42,0.45)] min-[390px]:min-h-[238px] sm:-mt-2 sm:min-h-[340px] xl:mx-0 xl:mt-0 xl:min-h-[490px] xl:max-w-none xl:overflow-visible xl:rounded-none xl:border-0 xl:bg-transparent xl:shadow-none"
           aria-label={t.hero.portraitAria}
         >
           <div className="absolute inset-6 rounded-[2rem] bg-gradient-to-br from-blue-500/10 via-slate-950/20 to-violet-500/10 blur-sm" />
@@ -133,23 +133,23 @@ export function Hero() {
           <div className="absolute right-14 top-12 h-72 w-72 rounded-full bg-violet-600/12 blur-[115px]" />
           <div className="absolute bottom-8 left-14 h-24 w-72 rounded-full bg-cyan-400/10 blur-[70px]" />
           <div className="absolute inset-x-10 bottom-16 h-32 rounded-full bg-gradient-to-r from-transparent via-blue-400/10 to-violet-400/10 blur-2xl" />
-          <div className="absolute inset-0 overflow-hidden lg:inset-y-10 lg:right-0 lg:left-0">
+          <div className="absolute inset-0 overflow-hidden xl:inset-y-10 xl:right-0 xl:left-0">
             <Image
               src="/images/hero-rafael.png"
               alt={t.hero.portraitAlt}
               fill
               priority
-              sizes="(min-width: 1024px) 520px, 100vw"
-              className="hero-portrait-mask scale-[1.01] object-cover object-[58%_36%] opacity-[0.88] saturate-[1.03] min-[390px]:scale-[0.98] sm:scale-[0.96] lg:scale-[0.93] lg:object-[66%_42%] lg:opacity-[0.86]"
+              sizes="(min-width: 1280px) 520px, 100vw"
+              className="hero-portrait-mask scale-[1.01] object-cover object-[58%_36%] opacity-[0.88] saturate-[1.03] min-[390px]:scale-[0.98] sm:scale-[0.96] xl:scale-[0.93] xl:object-[66%_42%] xl:opacity-[0.86]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#02050d]/44 via-[#02050d]/10 to-transparent lg:from-[#02050d]/48 lg:via-[#02050d]/12" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#02050d]/44 via-[#02050d]/10 to-transparent xl:from-[#02050d]/48 xl:via-[#02050d]/12" />
             <div className="absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-[#02050d]/18 to-transparent" />
             <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#02050d]/90 to-transparent sm:h-20" />
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#02050d] via-[#02050d]/54 to-transparent sm:h-44 sm:via-[#02050d]/62" />
           </div>
 
           <div
-            className="animate-float-slow absolute left-1 top-20 hidden w-56 rounded-lg border border-white/10 bg-slate-950/45 p-4 text-[11px] text-slate-300 shadow-card-glow backdrop-blur-2xl lg:block xl:left-4"
+            className="animate-float-slow absolute left-6 top-10 hidden w-56 rounded-lg border border-white/10 bg-slate-950/45 p-4 text-[11px] text-slate-300 shadow-card-glow backdrop-blur-2xl md:block xl:left-4 xl:top-20"
             aria-hidden="true"
           >
             <div className="mb-4 flex items-center justify-between">
@@ -186,7 +186,7 @@ export function Hero() {
           </div>
 
           <div
-            className="absolute bottom-5 left-5 hidden w-56 rounded-lg border border-white/10 bg-slate-950/55 p-4 shadow-card-glow backdrop-blur-2xl sm:block lg:bottom-12 lg:left-8 lg:w-60 xl:left-12"
+            className="absolute bottom-5 left-5 hidden w-56 rounded-lg border border-white/10 bg-slate-950/55 p-4 shadow-card-glow backdrop-blur-2xl sm:block xl:bottom-12 xl:left-12 xl:w-60"
             aria-hidden="true"
           >
             <div className="flex items-center justify-between text-[11px] font-semibold uppercase text-slate-400">
@@ -205,7 +205,7 @@ export function Hero() {
           </div>
 
           <div
-            className="absolute left-4 top-8 hidden items-center gap-2 rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-xs text-slate-300 backdrop-blur-xl sm:flex lg:hidden"
+            className="absolute left-4 top-8 hidden items-center gap-2 rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-xs text-slate-300 backdrop-blur-xl sm:flex md:hidden"
             aria-hidden="true"
           >
             <Sparkles className="size-4 text-blue-300" />

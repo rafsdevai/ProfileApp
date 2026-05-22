@@ -108,10 +108,7 @@ export function Hero() {
             <div className="mt-7 flex justify-center sm:mt-8 xl:justify-start">
               <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-x-1.5 gap-y-1 rounded-full border border-white/10 bg-slate-950/35 px-3.5 py-2 text-[13px] font-medium text-slate-400 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-xl sm:flex-nowrap sm:text-sm">
                 {t.hero.trust.map((item, index) => (
-                  <span
-                    key={item}
-                    className={index === 0 ? "text-slate-200" : undefined}
-                  >
+                  <span key={item}>
                     {index > 0 ? (
                       <span className="mr-1.5 text-blue-400/70">&bull;</span>
                     ) : null}

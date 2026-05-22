@@ -19,7 +19,34 @@ export function ScrollToTop() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const start = window.scrollY;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion || start <= 0) {
+      window.scrollTo({ top: 0 });
+      return;
+    }
+
+    const isTouchWidth = window.innerWidth < 1024;
+    const duration = isTouchWidth ? 1100 : 720;
+    const startTime = window.performance.now();
+    const easeOutCubic = (value: number) => 1 - Math.pow(1 - value, 3);
+
+    const animateScroll = (time: number) => {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+
+      window.scrollTo({ top: start * (1 - easedProgress) });
+
+      if (progress < 1) {
+        window.requestAnimationFrame(animateScroll);
+      }
+    };
+
+    window.requestAnimationFrame(animateScroll);
   };
 
   return (

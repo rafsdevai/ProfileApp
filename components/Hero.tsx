@@ -186,25 +186,6 @@ export function Hero() {
           </div>
 
           <div
-            className="absolute bottom-5 left-5 hidden w-56 rounded-lg border border-white/10 bg-slate-950/55 p-4 shadow-card-glow backdrop-blur-2xl sm:block xl:bottom-12 xl:left-12 xl:w-60"
-            aria-hidden="true"
-          >
-            <div className="flex items-center justify-between text-[11px] font-semibold uppercase text-slate-400">
-              <span>{t.hero.statusTitle}</span>
-              <span className="text-emerald-400">{t.hero.statusOnline}</span>
-            </div>
-            <div className="mt-5 border-t border-white/10 pt-4">
-              <div className="mb-2 flex items-center justify-between text-[11px] uppercase text-slate-400">
-                <span>{t.hero.statusProgress}</span>
-                <span className="text-white">82%</span>
-              </div>
-              <div className="h-1.5 overflow-hidden rounded-full bg-slate-800">
-                <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-blue-500 to-cyan-300" />
-              </div>
-            </div>
-          </div>
-
-          <div
             className="absolute left-4 top-8 hidden items-center gap-2 rounded-full border border-white/10 bg-slate-950/45 px-3 py-2 text-xs text-slate-300 backdrop-blur-xl sm:flex md:hidden"
             aria-hidden="true"
           >

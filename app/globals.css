@@ -537,3 +537,41 @@ body::before {
     transition-duration: 1ms;
   }
 }
+
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
+  .ambient-cursor-light,
+  .hero-cursor-light,
+  .about-cursor-light,
+  .projects-cursor-light,
+  .portfolio-global-light,
+  .project-card-cursor-light,
+  .testimonial-card-cursor-light {
+    display: none;
+  }
+
+  .hero-particles,
+  .hero-grid-drift,
+  .hero-orchestration-drift,
+  .animate-float-slow,
+  .section-gradient-drift,
+  .section-system-drift,
+  .project-system-drift,
+  .portfolio-global-system {
+    animation: none;
+  }
+
+  .about-depth-back,
+  .about-depth-front,
+  .hero-depth,
+  .portfolio-global-system,
+  .projects-depth {
+    transform: none;
+    transition-duration: 1ms;
+  }
+
+  .service-surface,
+  .project-surface {
+    transition-duration: 240ms;
+    will-change: auto;
+  }
+}

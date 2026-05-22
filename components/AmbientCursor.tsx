@@ -18,6 +18,11 @@ export function AmbientCursor() {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     );
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    if (prefersReducedMotion.matches || !finePointer.matches) {
+      return;
+    }
 
     const render = () => {
       current.current.x += (target.current.x - current.current.x) * 0.12;

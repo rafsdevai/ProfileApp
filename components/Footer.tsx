@@ -16,7 +16,7 @@ import { Reveal } from "@/components/Reveal";
 
 const consultationHref = "https://calendly.com/rafstefanache";
 const linkedinHref = "https://www.linkedin.com/in/rafael-stefanache-72a767288";
-const githubHref = "https://github.com/RafaelStefanache";
+const githubHref = "https://github.com/RafaelDevLabs";
 const whatsappHref =
   "https://wa.me/40745238045?text=Hi%20Rafael%2C%20I%27d%20like%20to%20discuss%20a%20project%20or%20mentoring.";
 

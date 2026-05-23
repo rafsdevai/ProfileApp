@@ -15,10 +15,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://rafaelstefanache.com/#person",
+      "@id": "https://rafaeldev.ro/#person",
       name: "Rafael Stefanache",
-      url: "https://rafaelstefanache.com",
-      image: "https://rafaelstefanache.com/images/hero-rafael.png",
+      url: "https://rafaeldev.ro",
+      image: "https://rafaeldev.ro/images/hero-rafael.png",
       jobTitle: [
         "AI Automation Developer",
         "Full-Stack Developer",
@@ -34,7 +34,7 @@ const jsonLd = {
       email: "rafs.dev.ai@gmail.com",
       sameAs: [
         "https://www.linkedin.com/in/rafael-stefanache-72a767288",
-        "https://github.com/RafaelStefanache",
+        "https://github.com/RafaelDevLabs",
       ],
       knowsAbout: [
         "AI Workflow Automation",
@@ -48,11 +48,11 @@ const jsonLd = {
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://rafaelstefanache.com/#services",
+      "@id": "https://rafaeldev.ro/#services",
       name: "Rafael Stefanache AI and Web Development Services",
-      url: "https://rafaelstefanache.com",
+      url: "https://rafaeldev.ro",
       provider: {
-        "@id": "https://rafaelstefanache.com/#person",
+        "@id": "https://rafaeldev.ro/#person",
       },
       areaServed: "Romania",
       description:

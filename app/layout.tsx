@@ -5,7 +5,7 @@ import { I18nProvider } from "@/components/I18nProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rafaelstefanache.com"),
+  metadataBase: new URL("https://rafaeldev.ro"),
   title:
     "Rafael Stefanache | AI Automation Developer & Full-Stack Developer Romania",
   description:

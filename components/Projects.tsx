@@ -8,8 +8,8 @@ import {
   BotMessageSquare,
   ExternalLink,
   Github,
-  Network,
-  Stethoscope,
+  QrCode,
+  Store,
 } from "lucide-react";
 
 import { useI18n } from "@/components/I18nProvider";
@@ -24,6 +24,9 @@ type ProjectCopy = {
   category: string;
   statement: string;
   stack: readonly string[];
+  githubHref?: string;
+  liveHref?: string;
+  caseStudyHref?: string;
 };
 
 type ProjectMeta = {
@@ -39,15 +42,15 @@ const projectMeta: ProjectMeta[] = [
     featured: true,
   },
   {
-    icon: Stethoscope,
+    icon: BookOpen,
     tone: "violet",
   },
   {
-    icon: Network,
+    icon: Store,
     tone: "cyan",
   },
   {
-    icon: BookOpen,
+    icon: QrCode,
     tone: "purple",
   },
 ];
@@ -65,22 +68,26 @@ function ProjectActions({
   title,
   githubAria,
   liveAria,
+  githubHref = "#",
+  liveHref = "#",
 }: {
   title: string;
   githubAria: string;
   liveAria: string;
+  githubHref?: string;
+  liveHref?: string;
 }) {
   return (
     <div className="inline-flex rounded-md bg-slate-950/30 p-0.5 text-slate-400 backdrop-blur-xl transition duration-300 group-hover:bg-white/[0.045] group-hover:text-slate-200">
       <a
-        href="#contact"
+        href={githubHref}
         aria-label={`${title} ${githubAria}`}
         className="flex size-8 items-center justify-center rounded-md transition duration-300 hover:bg-white/[0.055] hover:text-blue-100"
       >
         <Github className="size-4" aria-hidden="true" />
       </a>
       <a
-        href="#contact"
+        href={liveHref}
         aria-label={`${title} ${liveAria}`}
         className="flex size-8 items-center justify-center rounded-md transition duration-300 hover:bg-white/[0.055] hover:text-blue-100"
       >
@@ -179,6 +186,8 @@ function ProjectCard({
               title={project.title}
               githubAria={githubAria}
               liveAria={liveAria}
+              githubHref={project.githubHref}
+              liveHref={project.liveHref}
             />
           </div>
         </div>
@@ -214,7 +223,7 @@ function ProjectCard({
 
         <div className="relative mt-auto pt-6">
           <a
-            href="#contact"
+            href={project.caseStudyHref ?? "#"}
             className={cn(
               "group/case inline-flex items-center gap-2 text-xs font-semibold text-blue-300/85 transition duration-300 hover:-translate-y-0.5 hover:text-blue-100",
               meta.featured && "text-sm text-blue-200",
@@ -282,7 +291,7 @@ export function Projects() {
           {t.projects.title}
         </h2>
         <a
-          href="#contact"
+          href="https://github.com/orgs/RafaelDevLabs/repositories"
           className="shrink-0 text-xs font-medium text-slate-500 transition hover:text-slate-300"
         >
           {t.projects.viewAll}

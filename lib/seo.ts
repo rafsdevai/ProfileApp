@@ -194,10 +194,6 @@ export const jsonLd = {
       email: siteConfig.email,
       telephone: siteConfig.phone,
       priceRange: "Project-based pricing",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: siteConfig.country,
-      },
       founder: {
         "@id": `${siteConfig.url}/#person`,
       },

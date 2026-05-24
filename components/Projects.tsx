@@ -4,8 +4,8 @@ import type { CSSProperties, PointerEvent } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowUpRight,
-  BookOpen,
   BotMessageSquare,
+  Dumbbell,
   ExternalLink,
   Github,
   QrCode,
@@ -42,7 +42,7 @@ const projectMeta: ProjectMeta[] = [
     featured: true,
   },
   {
-    icon: BookOpen,
+    icon: Dumbbell,
     tone: "violet",
   },
   {

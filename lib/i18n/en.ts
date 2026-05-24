@@ -102,12 +102,12 @@ export const en = {
         caseStudyHref: "#",
       },
       {
-        title: "Study Task",
-        category: "EDUCATION PLATFORM",
+        title: "FitnessTrack",
+        category: "NUTRITION TRACKER",
         statement:
-          "Platform for teachers and students to organize daily learning tasks, topics and certification preparation. Helps teachers assign structured work to specific students and helps students track progress more clearly.",
-        stack: ["React", "FastAPI", "Supabase", "Education"],
-        githubHref: "https://github.com/RafaelDevLabs/StudyTask",
+          "Personal nutrition tracker for meal logging, private food products, weight tracking and dashboard analytics. It includes a Romanian-first meal assistant that prepares realistic meal suggestions from saved foods, using deterministic macro matching instead of invented nutrition values.",
+        stack: ["Next.js 15", "TypeScript", "Supabase", "Recharts", "Zod", "Vitest"],
+        githubHref: "https://github.com/RafaelDevLabs/FitnessTrack",
         liveHref: "#",
         caseStudyHref: "#",
       },

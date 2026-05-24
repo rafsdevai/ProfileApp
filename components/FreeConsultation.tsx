@@ -5,14 +5,16 @@ import { ArrowUpRight, CalendarDays, CheckCircle2 } from "lucide-react";
 import { useI18n } from "@/components/I18nProvider";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
-
-const calendlyHref = "https://calendly.com/rafstefanache";
+import { siteConfig } from "@/lib/seo";
 
 export function FreeConsultation() {
   const { t } = useI18n();
 
   return (
-    <section className="relative border-b border-white/10 p-7 sm:p-9 lg:p-10">
+    <section
+      aria-labelledby="consultation-heading"
+      className="relative border-b border-white/10 p-7 sm:p-9 lg:p-10"
+    >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(59,130,246,0.065),transparent_34%),linear-gradient(120deg,rgba(59,130,246,0.035),transparent_42%,rgba(139,92,246,0.03))]" />
 
       <div className="relative grid gap-8 lg:grid-cols-[0.95fr_1fr] lg:items-center lg:gap-12">
@@ -21,7 +23,10 @@ export function FreeConsultation() {
             {t.consultation.badge}
           </div>
 
-          <h2 className="mt-5 max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
+          <h2
+            id="consultation-heading"
+            className="mt-5 max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl"
+          >
             {t.consultation.title}
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">
@@ -30,7 +35,11 @@ export function FreeConsultation() {
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" className="w-full sm:w-auto">
-              <a href={calendlyHref} target="_blank" rel="noreferrer">
+              <a
+                href={siteConfig.calendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t.consultation.primaryCta}
                 <CalendarDays aria-hidden="true" />
               </a>

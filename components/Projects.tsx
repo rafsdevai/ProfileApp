@@ -15,6 +15,7 @@ import {
 import { useI18n } from "@/components/I18nProvider";
 import { Reveal } from "@/components/Reveal";
 import { Card } from "@/components/ui/card";
+import { siteConfig } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type ProjectTone = "violet" | "blue" | "cyan" | "purple";
@@ -64,6 +65,10 @@ const toneClasses = {
     "from-violet-500/14 via-purple-500/7 to-blue-950/8 text-violet-200",
 };
 
+function hasRealHref(href: string | undefined) {
+  return Boolean(href && href !== "#");
+}
+
 function ProjectActions({
   title,
   githubAria,
@@ -79,20 +84,24 @@ function ProjectActions({
 }) {
   return (
     <div className="inline-flex rounded-md bg-slate-950/30 p-0.5 text-slate-400 backdrop-blur-xl transition duration-300 group-hover:bg-white/[0.045] group-hover:text-slate-200">
-      <a
-        href={githubHref}
-        aria-label={`${title} ${githubAria}`}
-        className="flex size-8 items-center justify-center rounded-md transition duration-300 hover:bg-white/[0.055] hover:text-blue-100"
-      >
-        <Github className="size-4" aria-hidden="true" />
-      </a>
-      <a
-        href={liveHref}
-        aria-label={`${title} ${liveAria}`}
-        className="flex size-8 items-center justify-center rounded-md transition duration-300 hover:bg-white/[0.055] hover:text-blue-100"
-      >
-        <ExternalLink className="size-4" aria-hidden="true" />
-      </a>
+      {hasRealHref(githubHref) ? (
+        <a
+          href={githubHref}
+          aria-label={`${title} ${githubAria}`}
+          className="flex size-8 items-center justify-center rounded-md transition duration-300 hover:bg-white/[0.055] hover:text-blue-100"
+        >
+          <Github className="size-4" aria-hidden="true" />
+        </a>
+      ) : null}
+      {hasRealHref(liveHref) ? (
+        <a
+          href={liveHref}
+          aria-label={`${title} ${liveAria}`}
+          className="flex size-8 items-center justify-center rounded-md transition duration-300 hover:bg-white/[0.055] hover:text-blue-100"
+        >
+          <ExternalLink className="size-4" aria-hidden="true" />
+        </a>
+      ) : null}
     </div>
   );
 }
@@ -222,22 +231,24 @@ function ProjectCard({
         </div>
 
         <div className="relative mt-auto pt-6">
-          <a
-            href={project.caseStudyHref ?? "#"}
-            className={cn(
-              "group/case inline-flex items-center gap-2 text-xs font-semibold text-blue-300/85 transition duration-300 hover:-translate-y-0.5 hover:text-blue-100",
-              meta.featured && "text-sm text-blue-200",
-            )}
-          >
-            {viewCaseStudy}
-            <ArrowUpRight
+          {hasRealHref(project.caseStudyHref) ? (
+            <a
+              href={project.caseStudyHref}
               className={cn(
-                "size-3.5 transition-transform duration-300 group-hover/case:translate-x-0.5 group-hover/case:-translate-y-0.5",
-                meta.featured && "size-4",
+                "group/case inline-flex items-center gap-2 text-xs font-semibold text-blue-300/85 transition duration-300 hover:-translate-y-0.5 hover:text-blue-100",
+                meta.featured && "text-sm text-blue-200",
               )}
-              aria-hidden="true"
-            />
-          </a>
+            >
+              {viewCaseStudy}
+              <ArrowUpRight
+                className={cn(
+                  "size-3.5 transition-transform duration-300 group-hover/case:translate-x-0.5 group-hover/case:-translate-y-0.5",
+                  meta.featured && "size-4",
+                )}
+                aria-hidden="true"
+              />
+            </a>
+          ) : null}
         </div>
       </div>
     </Card>
@@ -277,6 +288,7 @@ export function Projects() {
   return (
     <section
       id="work"
+      aria-labelledby="work-heading"
       style={sectionStyle}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
@@ -287,11 +299,11 @@ export function Projects() {
       <div className="projects-cursor-light pointer-events-none absolute inset-0" />
 
       <Reveal className="relative mb-10 flex items-center justify-between gap-4">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <h2 id="work-heading" className="text-2xl font-bold text-white sm:text-3xl">
           {t.projects.title}
         </h2>
         <a
-          href="https://github.com/orgs/RafaelDevLabs/repositories"
+          href={siteConfig.githubReposUrl}
           className="shrink-0 text-xs font-medium text-slate-500 transition hover:text-slate-300"
         >
           {t.projects.viewAll}

@@ -106,14 +106,20 @@ export function Testimonials() {
   const { t } = useI18n();
 
   return (
-    <section className="relative border-b border-white/10 p-7 sm:p-9 lg:p-10">
+    <section
+      aria-labelledby="testimonials-heading"
+      className="relative border-b border-white/10 p-7 sm:p-9 lg:p-10"
+    >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-500/[0.025] via-transparent to-transparent" />
       <Reveal className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase text-blue-300">
             {t.testimonials.eyebrow}
           </p>
-          <h2 className="mt-2 max-w-xl text-2xl font-bold leading-tight text-white sm:text-3xl">
+          <h2
+            id="testimonials-heading"
+            className="mt-2 max-w-xl text-2xl font-bold leading-tight text-white sm:text-3xl"
+          >
             {t.testimonials.title}
           </h2>
         </div>

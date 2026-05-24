@@ -12,11 +12,15 @@ export function CTA() {
   return (
     <section
       id="mentoring"
+      aria-labelledby="mentoring-heading"
       className="relative grid items-center gap-8 border-b border-white/10 bg-blue-500/[0.035] p-7 sm:p-9 lg:grid-cols-[0.95fr_1fr_0.95fr] lg:p-10"
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-500/[0.055] via-transparent to-violet-500/[0.045]" />
       <Reveal>
-        <h2 className="max-w-sm text-balance text-3xl font-bold leading-tight text-white sm:text-4xl">
+        <h2
+          id="mentoring-heading"
+          className="max-w-sm text-balance text-3xl font-bold leading-tight text-white sm:text-4xl"
+        >
           {t.cta.title}
         </h2>
         <p className="mt-4 text-base text-slate-300">{t.cta.subtitle}</p>

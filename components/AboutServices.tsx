@@ -74,6 +74,7 @@ export function AboutServices() {
   return (
     <section
       id="about"
+      aria-labelledby="about-heading"
       style={motionStyle}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
@@ -95,7 +96,10 @@ export function AboutServices() {
               </span>
             </div>
 
-            <h2 className="text-3xl font-bold tracking-normal text-white">
+            <h2
+              id="about-heading"
+              className="text-3xl font-bold tracking-normal text-white"
+            >
               {t.about.title}
             </h2>
             <div className="mt-6 space-y-4 text-[15px] leading-8 text-slate-300 sm:text-base sm:leading-8">
@@ -126,13 +130,17 @@ export function AboutServices() {
         </div>
       </div>
 
-      <div id="services" className="relative scroll-mt-24 p-7 sm:p-10 lg:p-11">
+      <section
+        id="services"
+        aria-labelledby="services-heading"
+        className="relative scroll-mt-24 p-7 sm:p-10 lg:p-11"
+      >
         <Reveal delay={0.04} className="mb-9 flex items-end justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase text-blue-300">
               {t.about.eyebrow}
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-white">
+            <h2 id="services-heading" className="mt-2 text-3xl font-bold text-white">
               {t.about.servicesTitle}
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">
@@ -217,7 +225,7 @@ export function AboutServices() {
             );
           })}
         </div>
-      </div>
+      </section>
     </section>
   );
 }

@@ -7,8 +7,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import { useI18n } from "@/components/I18nProvider";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
-
-const calendlyHref = "https://calendly.com/rafstefanache";
+import { siteConfig } from "@/lib/seo";
 
 export function Hero() {
   const { t } = useI18n();
@@ -85,7 +84,11 @@ export function Hero() {
                 size="lg"
                 className="shadow-[0_0_58px_rgba(59,130,246,0.5)] hover:shadow-[0_0_78px_rgba(59,130,246,0.66)]"
               >
-                <a href={calendlyHref} target="_blank" rel="noreferrer">
+                <a
+                  href={siteConfig.calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {t.hero.primaryCta}
                   <ArrowUpRight aria-hidden="true" />
                 </a>

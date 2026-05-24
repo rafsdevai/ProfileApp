@@ -13,10 +13,8 @@ import {
 
 import { useI18n } from "@/components/I18nProvider";
 import { Reveal } from "@/components/Reveal";
+import { siteConfig } from "@/lib/seo";
 
-const consultationHref = "https://calendly.com/rafstefanache";
-const linkedinHref = "https://www.linkedin.com/in/rafael-stefanache-72a767288";
-const githubHref = "https://github.com/RafaelDevLabs";
 const whatsappHref =
   "https://wa.me/40745238045?text=Hi%20Rafael%2C%20I%27d%20like%20to%20discuss%20a%20project%20or%20mentoring.";
 
@@ -37,20 +35,24 @@ const detailIcons = [
 
 const quickLinks = [
   {
-    href: linkedinHref,
+    href: siteConfig.linkedinUrl,
     icon: Linkedin,
+    rel: "me noopener noreferrer",
   },
   {
-    href: githubHref,
+    href: siteConfig.githubUrl,
     icon: Github,
+    rel: "me noopener noreferrer",
   },
   {
-    href: consultationHref,
+    href: siteConfig.calendlyUrl,
     icon: CalendarDays,
+    rel: "noopener noreferrer",
   },
   {
     href: whatsappHref,
     icon: MessageCircle,
+    rel: "noopener noreferrer",
   },
 ];
 
@@ -58,7 +60,11 @@ export function Footer() {
   const { t } = useI18n();
 
   return (
-    <footer id="contact" className="relative p-7 sm:p-9 lg:p-10">
+    <footer
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="relative p-7 sm:p-9 lg:p-10"
+    >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-[radial-gradient(circle_at_50%_100%,rgba(59,130,246,0.08),transparent_44%),linear-gradient(to_bottom,transparent,rgba(2,6,23,0.72))]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="relative grid items-start gap-9 lg:grid-cols-[0.85fr_1fr_0.9fr] lg:gap-10">
@@ -67,7 +73,7 @@ export function Footer() {
             {t.contact.availabilityBadge}
           </div>
 
-          <h2 className="text-3xl font-bold text-white">
+          <h2 id="contact-heading" className="text-3xl font-bold text-white">
             {t.contact.title}
           </h2>
           <p className="mt-4 max-w-sm text-base leading-7 text-slate-300">
@@ -76,7 +82,7 @@ export function Footer() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          <address className="grid gap-4 not-italic sm:grid-cols-2 lg:grid-cols-1">
             {t.contact.details.map((detail, index) => {
               const Icon = detailIcons[index].icon;
 
@@ -95,7 +101,7 @@ export function Footer() {
                 </div>
               );
             })}
-          </div>
+          </address>
         </Reveal>
 
         <Reveal delay={0.16}>
@@ -113,7 +119,7 @@ export function Footer() {
                     key={label}
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                    rel={link.href.startsWith("http") ? link.rel : undefined}
                     className="group flex items-center gap-2 rounded-lg border border-white/[0.06] bg-white/[0.035] px-2.5 py-2.5 text-sm font-medium text-slate-300 transition duration-300 hover:-translate-y-0.5 hover:border-blue-300/22 hover:bg-blue-300/[0.055] hover:text-blue-100"
                   >
                     <Icon

@@ -186,7 +186,7 @@ export const jsonLd = {
       inLanguage: "en",
     },
     {
-      "@type": "ProfessionalService",
+      "@type": "Service",
       "@id": `${siteConfig.url}/#services`,
       name: "Rafael.Dev AI and Web Development Services",
       url: siteConfig.url,
@@ -194,7 +194,7 @@ export const jsonLd = {
       email: siteConfig.email,
       telephone: siteConfig.phone,
       priceRange: "Project-based pricing",
-      founder: {
+      provider: {
         "@id": `${siteConfig.url}/#person`,
       },
       areaServed: {
@@ -203,6 +203,7 @@ export const jsonLd = {
       },
       description:
         "AI automation, custom web applications, SaaS development, FastAPI development and Informatics mentoring for Atestat Informatica projects.",
+      serviceType: [...siteConfig.services],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Core Services",

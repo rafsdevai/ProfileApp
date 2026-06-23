@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 import { I18nProvider } from "@/components/I18nProvider";
 import { defaultMetadata } from "@/lib/seo";
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased">
         <I18nProvider>{children}</I18nProvider>
+        <Analytics />
       </body>
     </html>
   );

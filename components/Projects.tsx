@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { CSSProperties, PointerEvent } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -15,7 +16,6 @@ import {
 import { useI18n } from "@/components/I18nProvider";
 import { Reveal } from "@/components/Reveal";
 import { Card } from "@/components/ui/card";
-import { siteConfig } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type ProjectTone = "violet" | "blue" | "cyan" | "purple";
@@ -302,12 +302,12 @@ export function Projects() {
         <h2 id="work-heading" className="text-2xl font-bold text-white sm:text-3xl">
           {t.projects.title}
         </h2>
-        <a
-          href={siteConfig.githubReposUrl}
+        <Link
+          href="/work"
           className="shrink-0 text-xs font-medium text-slate-500 transition hover:text-slate-300"
         >
           {t.projects.viewAll}
-        </a>
+        </Link>
       </Reveal>
 
       <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-[1.14fr_repeat(3,minmax(0,1fr))]">

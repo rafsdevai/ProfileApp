@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { AmbientCursor } from "@/components/AmbientCursor";
 import { Navbar } from "@/components/Navbar";
+import { absoluteUrl } from "@/lib/seo";
 import { WorksCTA } from "@/src/components/work/WorksCTA";
 import { WorksContent } from "@/src/components/work/WorksContent";
 import { WorksHero } from "@/src/components/work/WorksHero";
@@ -8,17 +9,34 @@ import { WorksTrustRow } from "@/src/components/work/WorksTrustRow";
 import { projects } from "@/src/data/projects";
 
 export const metadata: Metadata = {
-  title: "Works",
+  title: "Works | Rafael.Dev",
   description:
-    "A curated collection of AI systems, web applications, automation tools, and academic projects by Rafael.Dev.",
+    "Explore AI, Data Engineering, Full-Stack and Automation projects built by Rafael.Dev.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
     title: "Works | Rafael.Dev",
     description:
-      "A curated collection of AI systems, web applications, automation tools, and academic projects by Rafael.Dev.",
-    url: "/work",
+      "Explore AI, Data Engineering, Full-Stack and Automation projects built by Rafael.Dev.",
+    type: "website",
+    url: absoluteUrl("/work"),
+    siteName: "Rafael.Dev",
+    images: [
+      {
+        url: absoluteUrl("/og/work-og.png"),
+        width: 1200,
+        height: 630,
+        alt: "Rafael.Dev work portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Works | Rafael.Dev",
+    description:
+      "Explore AI, Data Engineering, Full-Stack and Automation projects built by Rafael.Dev.",
+    images: [absoluteUrl("/og/work-og.png")],
   },
 };
 

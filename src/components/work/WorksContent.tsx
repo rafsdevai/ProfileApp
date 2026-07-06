@@ -11,23 +11,31 @@ type WorksContentProps = {
   projects: readonly ProjectSummary[];
 };
 
-const FILTER_KEYWORDS = {
-  ai: [
-    "ai",
-    "ml",
-    "machine learning",
-    "rag",
-    "chatbot",
-    "embedding",
-    "healthcare",
-    "education",
-    "assistant",
+const FILTER_SLUGS = {
+  ai: ["fitness-track", "medical-technical-assistance"],
+  web: [
+    "restaurant-qr-menu",
+    "studio-hair-booking",
+    "fitness-track",
+    "deco-casa-ecommerce",
+    "serele-stefanache",
   ],
-  web: ["website", "web", "platform", "dashboard", "business website"],
-  mobile: ["mobile", "responsive", "qr", "booking"],
-  automation: ["automation", "workflow", "admin", "scheduling"],
-  ecommerce: ["e-commerce", "ecommerce", "store", "retail", "catalog"],
-  academic: ["academic", "atestat", "certification", "documentation"],
+  mobile: [
+    "restaurant-qr-menu",
+    "studio-hair-booking",
+    "fitness-track",
+    "deco-casa-ecommerce",
+    "serele-stefanache",
+    "studytask",
+  ],
+  automation: [
+    "restaurant-qr-menu",
+    "studio-hair-booking",
+    "fitness-track",
+    "deco-casa-ecommerce",
+  ],
+  ecommerce: ["deco-casa-ecommerce"],
+  academic: ["studytask"],
 } as const;
 
 function matchesFilter(project: ProjectSummary, activeFilter: string) {
@@ -35,54 +43,10 @@ function matchesFilter(project: ProjectSummary, activeFilter: string) {
     return true;
   }
 
-  if (activeFilter === "ecommerce") {
-    return project.category === "ecommerce";
-  }
+  const slugsForFilter: readonly string[] =
+    FILTER_SLUGS[activeFilter as keyof typeof FILTER_SLUGS] ?? [];
 
-  if (activeFilter === "academic") {
-    return project.category === "academic";
-  }
-
-  if (activeFilter === "ai") {
-    return (
-      project.category === "ai-healthcare" ||
-      project.category === "ai-education" ||
-      includesKeywords(project, FILTER_KEYWORDS.ai)
-    );
-  }
-
-  if (activeFilter === "web") {
-    return (
-      project.category === "business" ||
-      includesKeywords(project, FILTER_KEYWORDS.web)
-    );
-  }
-
-  if (activeFilter === "mobile") {
-    return includesKeywords(project, FILTER_KEYWORDS.mobile);
-  }
-
-  if (activeFilter === "automation") {
-    return includesKeywords(project, FILTER_KEYWORDS.automation);
-  }
-
-  return false;
-}
-
-function includesKeywords(
-  project: ProjectSummary,
-  keywords: readonly string[],
-) {
-  const haystack = [
-    project.title,
-    project.description,
-    project.categoryLabel,
-    ...project.technologies,
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  return keywords.some((keyword) => haystack.includes(keyword));
+  return slugsForFilter.includes(project.slug);
 }
 
 export function WorksContent({ projects }: WorksContentProps) {

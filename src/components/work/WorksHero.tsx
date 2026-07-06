@@ -53,23 +53,23 @@ export function WorksHero() {
             solutions I&apos;ve built from idea to production.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-start gap-x-10 gap-y-6 sm:mt-12 sm:gap-x-12 lg:mt-14 lg:flex-nowrap lg:gap-x-12">
+          <div className="mt-10 grid grid-cols-3 gap-3 sm:mt-12 md:flex md:flex-wrap md:items-start md:gap-x-12 md:gap-y-6 lg:mt-14 lg:flex-nowrap lg:gap-x-12">
             {stats.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.label}
-                  className="flex min-w-[150px] items-start gap-3.5"
+                  className="flex min-w-0 flex-col items-center gap-2 text-center md:min-w-[150px] md:flex-row md:items-start md:gap-3.5 md:text-left"
                 >
-                  <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-white/[0.03] text-slate-300">
-                    <Icon className="size-4" aria-hidden="true" />
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-white/[0.03] text-slate-300 md:mt-1 md:size-8">
+                    <Icon className="size-3.5 md:size-4" aria-hidden="true" />
                   </span>
-                  <div>
-                    <p className="text-[2rem] font-bold leading-none text-white sm:text-[2.2rem]">
+                  <div className="min-w-0">
+                    <p className="text-[1.75rem] font-bold leading-none text-white sm:text-[2rem] md:text-[2.2rem]">
                       {item.value}
                     </p>
-                    <p className="mt-2 text-sm font-medium leading-5 text-slate-400">
+                    <p className="mt-1.5 text-[11px] font-medium leading-4 text-slate-400 sm:text-xs md:mt-2 md:text-sm md:leading-5">
                       {item.label}
                     </p>
                   </div>

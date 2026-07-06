@@ -36,10 +36,21 @@ export function ProjectFilters({
       `[data-filter="${activeFilter}"]`,
     );
 
-    activeButton?.scrollIntoView({
+    if (!activeButton) {
+      return;
+    }
+
+    const scrollAreaRect = scrollArea.getBoundingClientRect();
+    const activeButtonRect = activeButton.getBoundingClientRect();
+    const currentScrollLeft = scrollArea.scrollLeft;
+    const targetScrollLeft =
+      currentScrollLeft +
+      (activeButtonRect.left - scrollAreaRect.left) -
+      (scrollAreaRect.width / 2 - activeButtonRect.width / 2);
+
+    scrollArea.scrollTo({
+      left: Math.max(0, targetScrollLeft),
       behavior: "smooth",
-      inline: "center",
-      block: "nearest",
     });
   }, [activeFilter]);
 
@@ -57,7 +68,7 @@ export function ProjectFilters({
       <div
         ref={scrollAreaRef}
         aria-label="Project categories"
-        className="overflow-x-auto px-1 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden lg:overflow-visible lg:px-0"
+        className="overflow-x-auto overscroll-x-contain px-1 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden lg:overflow-visible lg:px-0"
       >
         <div className="flex min-w-max snap-x snap-mandatory justify-start gap-2.5 pr-6 sm:pr-8 lg:min-w-0 lg:justify-center lg:pr-0">
           {projectFilters.map((filter) => {

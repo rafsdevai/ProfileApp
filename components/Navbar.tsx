@@ -92,11 +92,19 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#02050d]/72 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-2xl">
       <nav
-        className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-7 sm:px-6 lg:px-8"
+        className={cn(
+          "mx-auto flex items-center justify-between px-7 sm:px-6 lg:px-8",
+          isWorkPage
+            ? "h-[76px] max-w-[1200px]"
+            : "h-[72px] max-w-6xl",
+        )}
         aria-label={t.nav.aria}
       >
         <Link href={logoHref} className="text-base font-bold text-white drop-shadow-sm">
-          Rafael<span className="text-blue-400">.</span>Dev
+          Rafael.
+          <span className="bg-gradient-to-r from-blue-500 via-blue-400 to-violet-500 bg-clip-text text-transparent">
+            Dev
+          </span>
         </Link>
 
         <div className="hidden h-full items-center gap-10 md:flex">

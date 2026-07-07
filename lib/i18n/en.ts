@@ -43,8 +43,7 @@ export const en = {
     badges: ["Endava", "AI Engineer"],
     title: "About Me",
     paragraphs: [
-      "I'm an AI Engineer and full-stack developer focused on building practical AI systems, custom web applications and structured technical solutions.",
-      "I work with startups, businesses and students as a FastAPI Developer, SaaS Developer and Informatics mentor to create software that is clean, modern and outcome-driven.",
+      "I'm an AI Engineer and Full-Stack Developer focused on building practical AI systems, modern web applications and scalable software solutions. Alongside my work as a Data Engineer, I build products that combine AI, backend engineering and intuitive user experiences to solve real business problems.",
     ],
     stackTitle: "Tech Stack",
     currentStack: [

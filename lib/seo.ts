@@ -6,12 +6,11 @@ export const siteConfig = {
   name: "Rafael.Dev",
   legalName: "Rafael Stefanache",
   url: "https://rafaeldev.ro",
-  title:
-    "Rafael.Dev | AI Automation Developer & Full-Stack Developer Romania",
+  title: "Rafael.Dev | AI Engineer & Full-Stack Developer",
   description:
-    "Rafael Stefanache builds practical AI systems, FastAPI backends, custom web applications, SaaS products and Informatics mentoring support in Romania.",
+    "AI solutions, custom web applications and modern software engineering.",
   shortDescription:
-    "AI systems, custom web applications, FastAPI development, SaaS products and Informatics mentoring by Rafael Stefanache.",
+    "AI solutions, custom web applications and modern software engineering.",
   locale: "en_US",
   country: "RO",
   email: "rafs.dev.ai@gmail.com",
@@ -21,7 +20,7 @@ export const siteConfig = {
   githubUrl: "https://github.com/RafaelDevLabs",
   githubReposUrl: "https://github.com/orgs/RafaelDevLabs/repositories",
   heroImage: "/images/hero-rafael.png",
-  ogImage: "/opengraph-image",
+  ogImage: "/og/home-og.png",
   appIcon: "/icon",
   keywords: [
     "Rafael.Dev",
@@ -94,15 +93,15 @@ export const defaultMetadata: Metadata = {
   },
   openGraph: {
     title: siteConfig.title,
-    description: siteConfig.shortDescription,
-    url: "/",
+    description: siteConfig.description,
+    url: absoluteUrl("/"),
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
         height: 630,
-        alt: "Rafael.Dev portfolio for AI automation, Python, FastAPI and full-stack web development",
+        alt: "Rafael.Dev homepage portfolio preview",
       },
     ],
     locale: siteConfig.locale,
@@ -111,8 +110,8 @@ export const defaultMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
-    description: siteConfig.shortDescription,
-    images: [siteConfig.ogImage],
+    description: siteConfig.description,
+    images: [absoluteUrl(siteConfig.ogImage)],
   },
   icons: {
     icon: siteConfig.appIcon,

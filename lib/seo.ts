@@ -20,7 +20,7 @@ export const siteConfig = {
   githubUrl: "https://github.com/RafaelDevLabs",
   githubReposUrl: "https://github.com/orgs/RafaelDevLabs/repositories",
   heroImage: "/images/hero-rafael.png",
-  ogImage: "/og/home-og.png",
+  ogImage: "/og/home-og.png?v=2",
   appIcon: "/icon",
   keywords: [
     "Rafael.Dev",

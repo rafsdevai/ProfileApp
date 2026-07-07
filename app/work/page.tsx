@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Rafael.Dev",
     images: [
       {
-        url: absoluteUrl("/og/work-og.png"),
+        url: absoluteUrl("/og/work-og.png?v=2"),
         width: 1200,
         height: 630,
         alt: "Rafael.Dev work portfolio preview",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Works | Rafael.Dev",
     description:
       "Explore AI, Data Engineering, Full-Stack and Automation projects built by Rafael.Dev.",
-    images: [absoluteUrl("/og/work-og.png")],
+    images: [absoluteUrl("/og/work-og.png?v=2")],
   },
 };
 

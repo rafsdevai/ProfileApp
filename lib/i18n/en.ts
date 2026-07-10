@@ -8,7 +8,7 @@ export const en = {
       { label: "About", href: "#about" },
       { label: "Services", href: "#services" },
       { label: "Work", href: "#work" },
-      { label: "Mentoring", href: "#mentoring" },
+      { label: "Partners", href: "#partners" },
     ],
     contact: "Contact",
   },

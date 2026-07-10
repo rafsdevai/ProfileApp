@@ -8,7 +8,7 @@ export const ro = {
       { label: "Despre", href: "#about" },
       { label: "Servicii", href: "#services" },
       { label: "Proiecte", href: "#work" },
-      { label: "Mentorat", href: "#mentoring" },
+      { label: "Parteneri", href: "#partners" },
     ],
     contact: "Contact",
   },

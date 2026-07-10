@@ -44,6 +44,23 @@ body::before {
   mask-image: radial-gradient(circle at 50% 0%, black, transparent 72%);
 }
 
+select.partner-select {
+  color-scheme: dark;
+  background-color: rgba(2, 6, 23, 0.82);
+}
+
+select.partner-select option {
+  background-color: #0b1120;
+  color: #e2e8f0;
+}
+
+select.partner-select option:checked,
+select.partner-select option:hover,
+select.partner-select option:focus {
+  background-color: #172554;
+  color: #ffffff;
+}
+
 ::selection {
   background: rgba(59, 130, 246, 0.35);
   color: white;

@@ -19,10 +19,15 @@ export function Navbar() {
   const navItems = t.nav.items;
   const isHomePage = pathname === "/";
   const isWorkPage = pathname.startsWith("/work");
+  const isPartnersPage = pathname.startsWith("/partners");
 
   const resolveNavHref = (href: string) => {
     if (href === "#work") {
       return "/work";
+    }
+
+    if (href === "#partners") {
+      return "/partners";
     }
 
     if (isHomePage) {
@@ -43,6 +48,11 @@ export function Navbar() {
   useEffect(() => {
     if (isWorkPage) {
       setActiveHref("#work");
+      return;
+    }
+
+    if (isPartnersPage) {
+      setActiveHref("#partners");
       return;
     }
 
@@ -87,14 +97,14 @@ export function Navbar() {
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [isHomePage, isWorkPage, navItems]);
+  }, [isHomePage, isPartnersPage, isWorkPage, navItems]);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#02050d]/72 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-2xl">
       <nav
         className={cn(
           "mx-auto flex items-center justify-between px-7 sm:px-6 lg:px-8",
-          isWorkPage
+          isWorkPage || isPartnersPage
             ? "h-[76px] max-w-[1200px]"
             : "h-[72px] max-w-6xl",
         )}

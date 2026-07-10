@@ -54,8 +54,8 @@ export default function PartnersPage() {
           <PartnerHero />
           <PartnershipSteps />
 
-          <section className="pb-16 sm:pb-20 lg:pb-24">
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] lg:gap-8">
+          <section className="pb-16 pt-2 sm:pb-20 sm:pt-4 lg:pb-24">
+            <div className="grid gap-5 md:gap-6 lg:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] lg:gap-8">
               <PartnerEligibility />
               <div className="lg:border-l lg:border-white/[0.06] lg:pl-8">
                 <PartnerApplicationForm />

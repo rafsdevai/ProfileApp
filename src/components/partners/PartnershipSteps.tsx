@@ -38,7 +38,7 @@ export function PartnershipSteps() {
   return (
     <section
       id="partnership-steps"
-      className="relative scroll-mt-28 border-t border-white/[0.05] py-10 sm:py-12"
+      className="relative scroll-mt-28 border-t border-white/[0.05] py-9 sm:py-11"
     >
       <Reveal className="mx-auto max-w-3xl text-center">
         <h2 className="text-[1.45rem] font-bold leading-tight text-white sm:text-[1.55rem] lg:text-[1.65rem]">
@@ -46,14 +46,14 @@ export function PartnershipSteps() {
         </h2>
       </Reveal>
 
-      <div className="mt-7 grid gap-x-6 gap-y-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-7 xl:gap-y-0">
+      <div className="mt-6 grid gap-x-6 gap-y-7 md:grid-cols-2 xl:grid-cols-4 xl:gap-x-7 xl:gap-y-0">
         {steps.map((step, index) => {
           const Icon = step.icon;
 
           return (
             <Reveal key={step.title} delay={0.06 + index * 0.05}>
-              <article className="relative px-3 py-1 xl:px-2">
-                <div className="relative min-h-[9rem] pl-8 sm:min-h-[9.25rem] xl:min-h-[8.7rem]">
+              <article className="relative px-2 py-1 sm:px-3 xl:px-2">
+                <div className="relative min-h-[8.7rem] pl-8 sm:min-h-[9rem] xl:min-h-[8.6rem]">
                   <div className="relative h-11">
                     <span className="absolute -left-8 top-[-6px] flex size-6 items-center justify-center rounded-full border border-violet-300/28 bg-[linear-gradient(180deg,rgba(58,32,105,0.7),rgba(14,19,33,0.92))] text-[11px] font-semibold text-white shadow-[0_0_14px_rgba(139,92,246,0.12)]">
                       {index + 1}
@@ -91,7 +91,7 @@ export function PartnershipSteps() {
                     ) : null}
                   </div>
 
-                  <div className="mt-3">
+                  <div className="mt-2.5">
                     <h3 className="text-[0.95rem] font-semibold leading-tight text-white">
                       {step.title}
                     </h3>

@@ -43,13 +43,15 @@ const reasons = [
 
 export function PartnerEligibility() {
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 md:space-y-6">
       <Reveal>
         <Card className="rounded-2xl border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.8),rgba(6,10,20,0.62))]">
-          <CardHeader className="p-6 pb-4">
-            <CardTitle className="text-2xl text-white">Who can apply?</CardTitle>
+          <CardHeader className="p-5 pb-4 sm:p-6 sm:pb-4">
+            <CardTitle className="text-[1.45rem] text-white sm:text-2xl">
+              Who can apply?
+            </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 p-6 pt-0">
+          <CardContent className="space-y-3 p-5 pt-0 sm:p-6 sm:pt-0">
             {eligibilityGroups.map((group) => {
               const Icon = group.icon;
 
@@ -80,12 +82,12 @@ export function PartnerEligibility() {
 
       <Reveal delay={0.08}>
         <Card className="rounded-2xl border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.8),rgba(6,10,20,0.62))]">
-          <CardHeader className="p-6 pb-4">
-            <CardTitle className="text-2xl text-white">
+          <CardHeader className="p-5 pb-4 sm:p-6 sm:pb-4">
+            <CardTitle className="text-[1.45rem] text-white sm:text-2xl">
               Why partner with us?
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 p-6 pt-0">
+          <CardContent className="space-y-3 p-5 pt-0 sm:p-6 sm:pt-0">
             {reasons.map((reason) => (
               <div key={reason} className="flex items-start gap-3">
                 <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-300">
@@ -100,13 +102,13 @@ export function PartnerEligibility() {
 
       <Reveal delay={0.14}>
         <Card className="rounded-2xl border-violet-300/12 bg-[linear-gradient(135deg,rgba(37,99,235,0.12),rgba(124,58,237,0.15),rgba(10,14,26,0.86))] shadow-[0_20px_60px_rgba(76,29,149,0.18)]">
-          <CardContent className="p-6">
-            <Quote className="size-8 text-violet-200" aria-hidden="true" />
+          <CardContent className="p-5 sm:p-6">
+            <Quote className="size-7 text-violet-200 sm:size-8" aria-hidden="true" />
             <div className="mt-4 space-y-1.5">
-              <p className="text-lg font-medium leading-8 text-white sm:whitespace-nowrap">
+              <p className="text-[1.05rem] font-medium leading-7 text-white sm:text-lg sm:leading-8 sm:whitespace-nowrap">
                 Our partners are an extension of our team.
               </p>
-              <p className="text-lg font-medium leading-8 text-white sm:whitespace-nowrap">
+              <p className="text-[1.05rem] font-medium leading-7 text-white sm:text-lg sm:leading-8 sm:whitespace-nowrap">
                 We win when you win.
               </p>
             </div>

@@ -25,7 +25,7 @@ function FieldWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="space-y-2">{children}</div>;
+  return <div className="space-y-2.5">{children}</div>;
 }
 
 function FieldLabel({
@@ -48,7 +48,7 @@ function FieldLabel({
 }
 
 const inputClassName =
-  "w-full rounded-xl border border-white/[0.08] bg-slate-950/45 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] outline-none transition duration-300 placeholder:text-slate-500 focus:border-blue-300/28 focus:ring-2 focus:ring-blue-400/30";
+  "w-full rounded-xl border border-white/[0.08] bg-slate-950/45 px-4 py-3 text-sm text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] outline-none transition duration-300 placeholder:text-slate-500 focus:border-blue-300/28 focus:ring-2 focus:ring-blue-400/30 disabled:cursor-not-allowed disabled:opacity-70";
 
 const selectClassName = `${inputClassName} partner-select`;
 
@@ -184,10 +184,10 @@ export function PartnerApplicationForm() {
     <Reveal delay={0.08}>
       <div
         id="partner-application"
-        className="scroll-mt-28 rounded-[24px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.84),rgba(6,10,20,0.7))] p-6 shadow-[0_24px_90px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-7 lg:p-8"
+        className="scroll-mt-28 rounded-[24px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.84),rgba(6,10,20,0.7))] p-5 shadow-[0_24px_90px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-7 lg:p-8"
       >
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold text-white sm:text-[2rem]">
+          <h2 className="text-[1.65rem] font-bold text-white sm:text-[2rem]">
             Apply to become a partner
           </h2>
           <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-base">
@@ -196,7 +196,7 @@ export function PartnerApplicationForm() {
           </p>
         </div>
 
-        <form className="mt-8 space-y-8" noValidate onSubmit={handleSubmit}>
+        <form className="mt-7 space-y-7 sm:mt-8 sm:space-y-8" noValidate onSubmit={handleSubmit}>
           <div className="grid gap-5 md:grid-cols-2">
             <FieldWrapper>
               <FieldLabel htmlFor={`${formId}-fullName`} label="Full Name" />
@@ -207,6 +207,8 @@ export function PartnerApplicationForm() {
                 value={values.fullName}
                 onChange={handleInputChange("fullName")}
                 className={inputClassName}
+                autoComplete="name"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.fullName)}
                 aria-describedby={errors.fullName ? errorId("fullName") : undefined}
               />
@@ -226,6 +228,8 @@ export function PartnerApplicationForm() {
                 value={values.email}
                 onChange={handleInputChange("email")}
                 className={inputClassName}
+                autoComplete="email"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.email)}
                 aria-describedby={errors.email ? errorId("email") : undefined}
               />
@@ -248,6 +252,8 @@ export function PartnerApplicationForm() {
                 value={values.phone}
                 onChange={handleInputChange("phone")}
                 className={inputClassName}
+                autoComplete="tel"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.phone)}
                 aria-describedby={errors.phone ? errorId("phone") : undefined}
               />
@@ -270,6 +276,8 @@ export function PartnerApplicationForm() {
                 value={values.location}
                 onChange={handleInputChange("location")}
                 className={inputClassName}
+                autoComplete="address-level2"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.location)}
                 aria-describedby={errors.location ? errorId("location") : undefined}
               />
@@ -291,6 +299,7 @@ export function PartnerApplicationForm() {
                 value={values.bestDescribesYou}
                 onChange={handleInputChange("bestDescribesYou")}
                 className={selectClassName}
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.bestDescribesYou)}
                 aria-describedby={
                   errors.bestDescribesYou
@@ -326,6 +335,7 @@ export function PartnerApplicationForm() {
                 value={values.companyStatus}
                 onChange={handleInputChange("companyStatus")}
                 className={selectClassName}
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.companyStatus)}
                 aria-describedby={
                   errors.companyStatus ? errorId("companyStatus") : undefined
@@ -356,6 +366,7 @@ export function PartnerApplicationForm() {
                 value={values.heardAboutProgram}
                 onChange={handleInputChange("heardAboutProgram")}
                 className={selectClassName}
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.heardAboutProgram)}
                 aria-describedby={
                   errors.heardAboutProgram
@@ -391,6 +402,7 @@ export function PartnerApplicationForm() {
                 value={values.potentialClients}
                 onChange={handleInputChange("potentialClients")}
                 className={selectClassName}
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.potentialClients)}
                 aria-describedby={
                   errors.potentialClients
@@ -433,6 +445,7 @@ export function PartnerApplicationForm() {
                       type="checkbox"
                       checked={checked}
                       onChange={() => handleIndustryChange(industry)}
+                      disabled={isSubmitting}
                       className="size-4 rounded border-white/10 bg-slate-950/40 text-blue-500 focus:ring-2 focus:ring-blue-400/40"
                     />
                     <span>{industry}</span>
@@ -459,6 +472,7 @@ export function PartnerApplicationForm() {
               value={values.clientAcquisitionPlan}
               onChange={handleInputChange("clientAcquisitionPlan")}
               className={inputClassName}
+              disabled={isSubmitting}
               aria-invalid={Boolean(errors.clientAcquisitionPlan)}
               aria-describedby={
                 errors.clientAcquisitionPlan
@@ -489,6 +503,8 @@ export function PartnerApplicationForm() {
                 value={values.linkedInUrl}
                 onChange={handleInputChange("linkedInUrl")}
                 className={inputClassName}
+                autoComplete="url"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.linkedInUrl)}
                 aria-describedby={
                   errors.linkedInUrl ? errorId("linkedInUrl") : undefined
@@ -513,6 +529,8 @@ export function PartnerApplicationForm() {
                 value={values.instagramUrl}
                 onChange={handleInputChange("instagramUrl")}
                 className={inputClassName}
+                autoComplete="url"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.instagramUrl)}
                 aria-describedby={
                   errors.instagramUrl ? errorId("instagramUrl") : undefined
@@ -540,6 +558,8 @@ export function PartnerApplicationForm() {
                 value={values.facebookUrl}
                 onChange={handleInputChange("facebookUrl")}
                 className={inputClassName}
+                autoComplete="url"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.facebookUrl)}
                 aria-describedby={
                   errors.facebookUrl ? errorId("facebookUrl") : undefined
@@ -567,6 +587,8 @@ export function PartnerApplicationForm() {
                 value={values.youtubeUrl}
                 onChange={handleInputChange("youtubeUrl")}
                 className={inputClassName}
+                autoComplete="url"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.youtubeUrl)}
                 aria-describedby={
                   errors.youtubeUrl ? errorId("youtubeUrl") : undefined
@@ -591,6 +613,8 @@ export function PartnerApplicationForm() {
                 value={values.tiktokUrl}
                 onChange={handleInputChange("tiktokUrl")}
                 className={inputClassName}
+                autoComplete="url"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.tiktokUrl)}
                 aria-describedby={
                   errors.tiktokUrl ? errorId("tiktokUrl") : undefined
@@ -615,6 +639,8 @@ export function PartnerApplicationForm() {
                 value={values.xUrl}
                 onChange={handleInputChange("xUrl")}
                 className={inputClassName}
+                autoComplete="url"
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.xUrl)}
                 aria-describedby={errors.xUrl ? errorId("xUrl") : undefined}
               />
@@ -638,6 +664,8 @@ export function PartnerApplicationForm() {
                   value={values.websiteUrl}
                   onChange={handleInputChange("websiteUrl")}
                   className={inputClassName}
+                  autoComplete="url"
+                  disabled={isSubmitting}
                   aria-invalid={Boolean(errors.websiteUrl)}
                   aria-describedby={
                     errors.websiteUrl ? errorId("websiteUrl") : undefined
@@ -665,6 +693,7 @@ export function PartnerApplicationForm() {
               value={values.additionalNotes}
               onChange={handleInputChange("additionalNotes")}
               className={inputClassName}
+              disabled={isSubmitting}
               aria-invalid={Boolean(errors.additionalNotes)}
               aria-describedby={
                 errors.additionalNotes ? errorId("additionalNotes") : undefined
@@ -687,6 +716,7 @@ export function PartnerApplicationForm() {
                 type="checkbox"
                 checked={values.agreement}
                 onChange={handleInputChange("agreement")}
+                disabled={isSubmitting}
                 className="mt-1 size-4 rounded border-white/10 bg-slate-950/40 text-blue-500 focus:ring-2 focus:ring-blue-400/40"
                 aria-invalid={Boolean(errors.agreement)}
                 aria-describedby={errors.agreement ? errorId("agreement") : undefined}
@@ -704,13 +734,13 @@ export function PartnerApplicationForm() {
           </FieldWrapper>
 
           {submitMessage ? (
-            <div className={`rounded-xl border px-4 py-3 text-sm ${statusToneClass}`}>
+            <div className={`rounded-xl border px-4 py-3 text-sm leading-6 ${statusToneClass}`}>
               {submitMessage}
             </div>
           ) : null}
 
           <div className="space-y-3">
-            <Button type="submit" size="lg" disabled={isSubmitting}>
+            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
               {isSubmitting ? "Submitting..." : "Submit Application"}
             </Button>
             <p className="text-sm text-slate-500">

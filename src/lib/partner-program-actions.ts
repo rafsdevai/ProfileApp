@@ -386,9 +386,10 @@ export async function submitPartnerLeadAction(
 
   const toEmail =
     cleanEnvValue(process.env.PARTNER_PROGRAM_TO_EMAIL) ?? "rafs.dev.ai@gmail.com";
-  const leadDetailsUrl = `${getAppBaseUrl()}/admin/leads/${createdLead.id}`;
 
   try {
+    const leadDetailsUrl = `${getAppBaseUrl()}/admin/leads/${createdLead.id}`;
+
     await sendEmail({
       to: toEmail,
       subject: `New Partner Lead - ${createdLead.companyName}`,

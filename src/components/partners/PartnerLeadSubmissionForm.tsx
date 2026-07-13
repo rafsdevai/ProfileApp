@@ -73,8 +73,9 @@ export function PartnerLeadSubmissionForm({
         <div className="space-y-2">
           <label htmlFor="website" className="text-sm font-medium text-slate-200">
             Website
+            <span className="ml-1 text-xs font-normal text-slate-500">(Optional)</span>
           </label>
-          <input id="website" name="website" className={inputClassName} />
+          <input id="website" name="website" type="url" className={inputClassName} />
           {renderError("website")}
         </div>
 
@@ -149,4 +150,3 @@ export function PartnerLeadSubmissionForm({
     </form>
   );
 }
-

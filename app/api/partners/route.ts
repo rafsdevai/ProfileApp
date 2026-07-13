@@ -6,6 +6,11 @@ import {
   validatePartnerApplication,
 } from "@/src/lib/partners";
 import {
+  consumeRateLimit,
+  getClientIpFromHeaders,
+  retryAfterSeconds,
+} from "@/src/lib/rate-limit";
+import {
   insertPartnerProgramApplication,
   updatePartnerProgramApplicationNotification,
 } from "@/src/lib/supabase-admin";
@@ -31,6 +36,28 @@ function cleanEnvValue(value: string | undefined) {
 }
 
 export async function POST(request: Request) {
+  const clientIp = getClientIpFromHeaders(request.headers);
+  const rateLimitResult = consumeRateLimit({
+    namespace: "partner-application-submit",
+    identifier: clientIp,
+    limit: 5,
+    windowMs: 30 * 60 * 1000,
+  });
+
+  if (!rateLimitResult.allowed) {
+    return NextResponse.json(
+      {
+        message: `Too many applications from this connection. Please try again in about ${retryAfterSeconds(rateLimitResult.retryAfterMs)} seconds.`,
+      },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(retryAfterSeconds(rateLimitResult.retryAfterMs)),
+        },
+      },
+    );
+  }
+
   let payload: PartnerApplicationData;
 
   try {

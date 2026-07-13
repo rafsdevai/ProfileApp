@@ -1662,11 +1662,11 @@ export const projectDetails: readonly ProjectDetail[] = [
     categoryLabel: "Education Platform",
     description:
       "An educational task management web application built as an Informatics Atestat project for a 12th grade student, featuring teacher and student roles, task assignment, progress tracking, calendar view and authentication.",
-    cardImage: "/projects/studyTask.png",
+    cardImage: "/projects/studytask.png",
     cardImageAlt: "StudyTask project preview",
     tags: ["Education", "Assignments", "Teacher Dashboard"],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    heroImage: "/works/studytask/herosection_studyTask.png",
+    heroImage: "/works/studytask/herosection-studytask.png",
     heroImageAlt: "StudyTask hero preview",
     heroTitleLines: ["StudyTask"],
     overview: {

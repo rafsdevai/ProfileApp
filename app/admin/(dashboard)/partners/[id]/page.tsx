@@ -67,7 +67,11 @@ export default async function AdminPartnerDetailsPage({
 
         {typeof query.success === "string" ? (
           <div className="mt-5 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100">
-            Partner settings saved successfully.
+            {query.success === "approved"
+              ? "Partner approved successfully. Their private lead URL is available below."
+              : query.success === "token-regenerated"
+                ? "Partner token regenerated successfully. The updated private lead URL is shown below."
+                : "Partner settings saved successfully."}
           </div>
         ) : null}
 
@@ -76,7 +80,7 @@ export default async function AdminPartnerDetailsPage({
             <div className="rounded-[24px] border border-white/[0.08] bg-white/[0.025] p-5 sm:p-6">
               <h3 className="text-lg font-semibold text-white">Private lead URL</h3>
               <p className="mt-2 text-sm leading-7 text-slate-400">
-                This URL identifies the partner automatically. Treat it as secret.
+                This URL identifies the partner automatically. You can always return here to copy it again if they lose it. Treat it as secret.
               </p>
               <div className="mt-4 rounded-2xl border border-blue-400/20 bg-blue-500/10 p-4">
                 <p className="break-all text-sm text-white">{leadUrl}</p>

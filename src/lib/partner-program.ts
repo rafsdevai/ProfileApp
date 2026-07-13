@@ -111,13 +111,38 @@ export function decryptPartnerToken(value: string) {
   return Buffer.concat([decipher.update(encrypted), decipher.final()]).toString("utf8");
 }
 
-export function buildPartnerLeadUrl(token: string) {
-  const baseUrl =
+export function getAppBaseUrl() {
+  const explicitUrl =
     cleanEnvValue(process.env.NEXT_PUBLIC_SITE_URL) ??
-    cleanEnvValue(process.env.SITE_URL) ??
-    "http://localhost:3001";
+    cleanEnvValue(process.env.SITE_URL);
 
-  return `${baseUrl.replace(/\/$/, "")}/partners/submit-lead/${token}`;
+  if (explicitUrl) {
+    return explicitUrl.replace(/\/$/, "");
+  }
+
+  const vercelUrl =
+    cleanEnvValue(process.env.VERCEL_PROJECT_PRODUCTION_URL) ??
+    cleanEnvValue(process.env.VERCEL_URL);
+
+  if (vercelUrl) {
+    const normalizedHost = vercelUrl
+      .replace(/^https?:\/\//, "")
+      .replace(/\/$/, "");
+
+    return `https://${normalizedHost}`;
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    return "http://localhost:3001";
+  }
+
+  throw new Error(
+    "Public site URL is missing in production. Set NEXT_PUBLIC_SITE_URL or SITE_URL.",
+  );
+}
+
+export function buildPartnerLeadUrl(token: string) {
+  return `${getAppBaseUrl()}/partners/submit-lead/${token}`;
 }
 
 export function normalizeLeadSubmissionData(

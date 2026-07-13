@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  buildPartnerLeadUrl,
   calculateCommissionAmount,
   createPartnerToken,
   decryptPartnerToken,
@@ -12,6 +13,7 @@ import {
 
 process.env.PARTNER_TOKEN_ENCRYPTION_KEY =
   "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
+process.env.NEXT_PUBLIC_SITE_URL = "https://rafaeldev.ro";
 
 test("createPartnerToken generates a verifiable token", () => {
   const token = createPartnerToken();
@@ -56,3 +58,9 @@ test("commission status becomes not applicable when client paid amount is empty"
   assert.equal(resolveCommissionStatus("PENDING", "2500"), "PENDING");
 });
 
+test("buildPartnerLeadUrl uses the configured public site URL", () => {
+  assert.equal(
+    buildPartnerLeadUrl("test-token"),
+    "https://rafaeldev.ro/partners/submit-lead/test-token",
+  );
+});

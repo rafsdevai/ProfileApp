@@ -20,6 +20,7 @@ import {
   formatNewLeadAdminEmailText,
   formatPartnerApprovedEmailHtml,
   formatPartnerApprovedEmailText,
+  getAppBaseUrl,
   hashPartnerToken,
   normalizeLeadManagementUpdate,
   resolveCommissionStatus,
@@ -56,14 +57,6 @@ function getString(formData: FormData, key: string) {
 function getOptionalMoneyValue(value: string) {
   const trimmed = value.trim();
   return trimmed ? trimmed : null;
-}
-
-function getSiteUrl() {
-  return (
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    process.env.SITE_URL ??
-    "http://localhost:3001"
-  ).replace(/\/$/, "");
 }
 
 export async function adminLoginAction(formData: FormData) {
@@ -393,7 +386,7 @@ export async function submitPartnerLeadAction(
 
   const toEmail =
     cleanEnvValue(process.env.PARTNER_PROGRAM_TO_EMAIL) ?? "rafs.dev.ai@gmail.com";
-  const leadDetailsUrl = `${getSiteUrl()}/admin/leads/${createdLead.id}`;
+  const leadDetailsUrl = `${getAppBaseUrl()}/admin/leads/${createdLead.id}`;
 
   try {
     await sendEmail({

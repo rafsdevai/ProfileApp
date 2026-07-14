@@ -9,6 +9,7 @@ import {
   type FormEvent,
 } from "react";
 import { X } from "lucide-react";
+import { createPortal } from "react-dom";
 
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
@@ -69,8 +70,13 @@ export function PartnerApplicationForm() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [submitMessage, setSubmitMessage] = useState("");
   const [isSuccessDialogOpen, setIsSuccessDialogOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   const isSubmitting = submitState === "loading";
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!isSuccessDialogOpen) {
@@ -210,21 +216,80 @@ export function PartnerApplicationForm() {
   const errorId = (field: keyof PartnerApplicationData) =>
     `${formId}-${field}-error`;
 
+  const successDialog =
+    isMounted && isSuccessDialogOpen
+      ? createPortal(
+          <div
+            className="fixed inset-0 z-[90] flex items-center justify-center bg-[rgba(2,6,23,0.78)] p-4 backdrop-blur-md"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`${formId}-success-dialog-title`}
+            aria-describedby={`${formId}-success-dialog-description`}
+            onClick={() => setIsSuccessDialogOpen(false)}
+          >
+            <div
+              className="relative w-full max-w-lg overflow-hidden rounded-[28px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.96),rgba(7,11,21,0.92))] p-6 shadow-[0_30px_80px_rgba(2,6,23,0.55)] sm:p-7"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setIsSuccessDialogOpen(false)}
+                className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.04] text-white transition duration-300 hover:bg-white/[0.09] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                aria-label="Close confirmation dialog"
+              >
+                <X className="size-4.5" aria-hidden="true" />
+              </button>
+
+              <div className="pr-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300/80">
+                  Application sent
+                </p>
+                <h3
+                  id={`${formId}-success-dialog-title`}
+                  className="mt-3 text-2xl font-semibold text-white"
+                >
+                  Check your inbox and Spam folder
+                </h3>
+                <p
+                  id={`${formId}-success-dialog-description`}
+                  className="mt-4 text-sm leading-7 text-slate-300"
+                >
+                  We&apos;ll send the confirmation email after your application is accepted.
+                  If you don&apos;t see it in your inbox, please also check the
+                  <span className="mx-1 rounded bg-white/[0.08] px-2 py-0.5 text-white">
+                    Spam
+                  </span>
+                  folder.
+                </p>
+              </div>
+
+              <div className="mt-6 flex justify-end">
+                <Button type="button" onClick={() => setIsSuccessDialogOpen(false)}>
+                  Understood
+                </Button>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )
+      : null;
+
   return (
-    <Reveal delay={0.08}>
-      <div
-        id="partner-application"
-        className="scroll-mt-28 rounded-[24px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.84),rgba(6,10,20,0.7))] p-5 shadow-[0_24px_90px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-7 lg:p-8"
-      >
-        <div className="max-w-2xl">
-          <h2 className="text-[1.65rem] font-bold text-white sm:text-[2rem]">
-            Apply to become a partner
-          </h2>
-          <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-base">
-            Fill out the form below and we&apos;ll get in touch with you within 2
-            business days.
-          </p>
-        </div>
+    <>
+      <Reveal delay={0.08}>
+        <div
+          id="partner-application"
+          className="scroll-mt-28 rounded-[24px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.84),rgba(6,10,20,0.7))] p-5 shadow-[0_24px_90px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-7 lg:p-8"
+        >
+          <div className="max-w-2xl">
+            <h2 className="text-[1.65rem] font-bold text-white sm:text-[2rem]">
+              Apply to become a partner
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-base">
+              Fill out the form below and we&apos;ll get in touch with you within 2
+              business days.
+            </p>
+          </div>
 
         <form className="mt-7 space-y-7 sm:mt-8 sm:space-y-8" noValidate onSubmit={handleSubmit}>
           <div className="grid gap-5 md:grid-cols-2">
@@ -779,60 +844,8 @@ export function PartnerApplicationForm() {
           </div>
         </form>
       </div>
-
-      {isSuccessDialogOpen ? (
-        <div
-          className="fixed inset-0 z-[90] flex items-center justify-center bg-[rgba(2,6,23,0.78)] p-4 backdrop-blur-md"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={`${formId}-success-dialog-title`}
-          aria-describedby={`${formId}-success-dialog-description`}
-          onClick={() => setIsSuccessDialogOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-lg overflow-hidden rounded-[28px] border border-white/[0.08] bg-[linear-gradient(180deg,rgba(10,14,26,0.96),rgba(7,11,21,0.92))] p-6 shadow-[0_30px_80px_rgba(2,6,23,0.55)] sm:p-7"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setIsSuccessDialogOpen(false)}
-              className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.04] text-white transition duration-300 hover:bg-white/[0.09] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-              aria-label="Close confirmation dialog"
-            >
-              <X className="size-4.5" aria-hidden="true" />
-            </button>
-
-            <div className="pr-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300/80">
-                Application sent
-              </p>
-              <h3
-                id={`${formId}-success-dialog-title`}
-                className="mt-3 text-2xl font-semibold text-white"
-              >
-                Check your inbox and Spam folder
-              </h3>
-              <p
-                id={`${formId}-success-dialog-description`}
-                className="mt-4 text-sm leading-7 text-slate-300"
-              >
-                We&apos;ll send the confirmation email after your application is accepted.
-                If you don&apos;t see it in your inbox, please also check the
-                <span className="mx-1 rounded bg-white/[0.08] px-2 py-0.5 text-white">
-                  Spam
-                </span>
-                folder.
-              </p>
-            </div>
-
-            <div className="mt-6 flex justify-end">
-              <Button type="button" onClick={() => setIsSuccessDialogOpen(false)}>
-                Understood
-              </Button>
-            </div>
-          </div>
-        </div>
-      ) : null}
-    </Reveal>
+      </Reveal>
+      {successDialog}
+    </>
   );
 }

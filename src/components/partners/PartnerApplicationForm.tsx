@@ -131,10 +131,7 @@ export function PartnerApplicationForm() {
       event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
     ) => {
       const target = event.currentTarget;
-      const value =
-        target instanceof HTMLInputElement && target.type === "checkbox"
-          ? target.checked
-          : target.value;
+      const value = target.value;
 
       setFieldValue(field, value as PartnerApplicationData[typeof field]);
     };
@@ -804,43 +801,43 @@ export function PartnerApplicationForm() {
             ) : null}
           </FieldWrapper>
 
-          <FieldWrapper>
-            <label className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.025] px-4 py-4">
-              <input
-                id={`${formId}-agreement`}
-                type="checkbox"
-                checked={values.agreement}
-                onChange={handleInputChange("agreement")}
-                disabled={isSubmitting}
-                className="mt-1 size-4 rounded border-white/10 bg-slate-950/40 text-blue-500 focus:ring-2 focus:ring-blue-400/40"
-                aria-invalid={Boolean(errors.agreement)}
-                aria-describedby={errors.agreement ? errorId("agreement") : undefined}
-              />
-              <span className="text-sm leading-6 text-slate-300">
-                I agree that my data will be used for the purpose of the Partner
-                Program.
-              </span>
-            </label>
-            {errors.agreement ? (
-              <p id={errorId("agreement")} className="text-sm text-rose-300">
-                {errors.agreement}
-              </p>
-            ) : null}
-          </FieldWrapper>
-
           {submitMessage ? (
             <div className={`rounded-xl border px-4 py-3 text-sm leading-6 ${statusToneClass}`}>
               {submitMessage}
             </div>
           ) : null}
 
-          <div className="space-y-3">
+          <div className="space-y-4">
+            <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 text-sm leading-6 text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+              <p className="font-medium text-white">Privacy notice</p>
+              <p className="mt-2">
+                We collect the contact details, professional background, referral context, and any
+                additional information you submit to review and respond to your partnership
+                request, communicate with you, and keep an internal record of the application.
+              </p>
+              <p className="mt-2">
+                This processing is based on the steps necessary to review and handle your partner
+                application, not on optional marketing consent. We keep application records for{" "}
+                <span className="rounded bg-white/[0.08] px-1.5 py-0.5 text-white">
+                  [TODO: define retention period]
+                </span>
+                . Read the{" "}
+                <a href="/privacy-policy" className="text-blue-200 underline underline-offset-4">
+                  Privacy Policy
+                </a>{" "}
+                for full details.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
               {isSubmitting ? "Submitting..." : "Submit Application"}
             </Button>
             <p className="text-sm text-slate-500">
-              We respect your privacy. Your information is safe with us.
+              Your data is used only to process your partnership request unless you separately opt
+              into another purpose later.
             </p>
+            </div>
           </div>
         </form>
       </div>

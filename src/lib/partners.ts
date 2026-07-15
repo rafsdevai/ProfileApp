@@ -74,7 +74,6 @@ export const partnerApplicationInitialValues: PartnerApplicationData = {
   xUrl: "",
   websiteUrl: "",
   additionalNotes: "",
-  agreement: false,
 };
 
 const urlFields: Array<keyof PartnerApplicationData> = [
@@ -174,11 +173,6 @@ export function validatePartnerApplication(
       "Please estimate how many potential clients you can refer.";
   }
 
-  if (!values.agreement) {
-    errors.agreement =
-      "You must agree to the data processing statement to continue.";
-  }
-
   for (const field of urlFields) {
     const fieldValue = values[field];
 
@@ -212,8 +206,6 @@ export function formatPartnerApplicationText(values: PartnerApplicationData) {
     `X (Twitter): ${values.xUrl || "-"}`,
     `Website / platform: ${values.websiteUrl || "-"}`,
     `Anything else?: ${values.additionalNotes || "-"}`,
-    "",
-    "Agreement accepted: Yes",
   ].join("\n");
 }
 
@@ -246,7 +238,6 @@ export function formatPartnerApplicationHtml(values: PartnerApplicationData) {
 
   const notesRows: Array<[string, string]> = [
     ["Additional Notes", values.additionalNotes || "-"],
-    ["Agreement accepted", "Yes"],
   ];
 
   const linkLabels = new Set([

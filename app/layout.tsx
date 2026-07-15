@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/next";
 
+import { ConsentAwareAnalytics } from "@/components/cookies/ConsentAwareAnalytics";
+import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider";
 import { I18nProvider } from "@/components/I18nProvider";
 import { defaultMetadata } from "@/lib/seo";
 
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <I18nProvider>{children}</I18nProvider>
-        <Analytics />
+        <CookieConsentProvider>
+          <I18nProvider>{children}</I18nProvider>
+          <ConsentAwareAnalytics />
+        </CookieConsentProvider>
       </body>
     </html>
   );

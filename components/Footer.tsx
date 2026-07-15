@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   CalendarDays,
   CircleCheck,
@@ -141,7 +142,17 @@ export function Footer() {
         </p>
         <div className="flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>{t.contact.copyright}</p>
-          <p>{t.contact.footerServices}</p>
+          <div className="flex flex-col gap-2 sm:items-end">
+            <p>{t.contact.footerServices}</p>
+            <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+              <Link href="/privacy-policy" className="transition hover:text-blue-200">
+                Privacy Policy
+              </Link>
+              <Link href="/cookie-policy" className="transition hover:text-blue-200">
+                Cookie Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

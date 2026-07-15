@@ -59,10 +59,8 @@ export type PartnerApplicationData = {
   xUrl: string;
   websiteUrl: string;
   additionalNotes: string;
-  agreement: boolean;
 };
 
 export type PartnerApplicationErrors = Partial<
   Record<keyof PartnerApplicationData, string>
 >;
-

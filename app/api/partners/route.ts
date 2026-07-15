@@ -118,7 +118,7 @@ export async function POST(request: Request) {
       x_url: validation.values.xUrl || null,
       website_url: validation.values.websiteUrl || null,
       additional_notes: validation.values.additionalNotes || null,
-      agreement_accepted: validation.values.agreement,
+      agreement_accepted: false,
       notification_status: "pending",
       notification_error: null,
       resend_email_id: null,

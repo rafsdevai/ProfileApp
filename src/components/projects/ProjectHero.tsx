@@ -88,7 +88,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
 
           <div className="mt-4 sm:mt-5">
             <span className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
-              {project.categoryLabel}
+              {project.heroBadgeLabel ?? project.categoryLabel}
             </span>
           </div>
 
@@ -110,7 +110,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
           </h1>
 
           <p className="mt-6 max-w-[38rem] text-base leading-7 text-slate-300 sm:mt-7 sm:text-lg sm:leading-8 lg:mt-8">
-            {project.description}
+            {project.heroDescription ?? project.description}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 sm:mt-7 lg:mt-8">

@@ -122,6 +122,8 @@ export type ProjectSummary = {
 export type ProjectDetail = ProjectSummary & {
   readonly heroImage: string;
   readonly heroImageAlt: string;
+  readonly heroBadgeLabel?: string;
+  readonly heroDescription?: string;
   readonly heroTitleLines?: readonly string[];
   readonly liveDemoUrl?: string;
   readonly githubUrl?: string;

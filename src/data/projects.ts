@@ -14,4 +14,6 @@ export const projects: readonly ProjectSummary[] = projectDetails.map(
     technologies: project.technologies,
     featured: project.featured,
   }),
+).sort((project) =>
+  project.slug === "tamysweetuk-breeder-platform" ? -1 : 0,
 );

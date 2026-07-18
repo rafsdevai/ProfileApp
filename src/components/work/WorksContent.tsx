@@ -16,6 +16,7 @@ const FILTER_SLUGS = {
   web: [
     "restaurant-qr-menu",
     "studio-hair-booking",
+    "tamysweetuk-breeder-platform",
     "fitness-track",
     "deco-casa-ecommerce",
     "serele-stefanache",
@@ -23,6 +24,7 @@ const FILTER_SLUGS = {
   mobile: [
     "restaurant-qr-menu",
     "studio-hair-booking",
+    "tamysweetuk-breeder-platform",
     "fitness-track",
     "deco-casa-ecommerce",
     "serele-stefanache",

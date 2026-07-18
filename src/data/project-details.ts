@@ -1656,6 +1656,287 @@ export const projectDetails: readonly ProjectDetail[] = [
     ],
   },
   {
+    slug: "tamysweetuk-breeder-platform",
+    title: "TamysweetUK Breeder Platform",
+    category: "business",
+    categoryLabel: "Web Application",
+    description:
+      "A complete breeder management platform featuring a public website, kitten listings, enquiries and a custom admin dashboard for managing content, availability and featured listings.",
+    cardImage: "/projects/tamysweetuk.png",
+    cardImageAlt: "TamysweetUK Breeder Platform project preview",
+    tags: ["Breeder Platform", "Kitten Listings", "Admin Dashboard"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    featured: true,
+    heroImage: "/works/tamysweetuk/hero-section.png",
+    heroImageAlt: "TamysweetUK Breeder Platform hero preview",
+    heroBadgeLabel: "BREEDER MANAGEMENT PLATFORM",
+    heroDescription:
+      "A complete breeder management platform combining a premium public website with a powerful administration dashboard for managing kitten listings, featured content, availability and breeder operations.",
+    liveDemoUrl: "https://www.tamysweetuk.co.uk/",
+    overview: {
+      problemTitle: "The Problem",
+      problemPoints: [
+        "Breeders often rely on social media and manual communication to showcase available kittens, making updates time-consuming and enquiries difficult to manage.",
+        "Managing listings, featured kittens, availability and website content across multiple tools creates unnecessary complexity.",
+        "Without a centralized system, keeping the website accurate and up to date becomes inefficient.",
+      ],
+      solutionTitle: "The Solution",
+      solutionDescription:
+        "I designed and built a complete breeder platform consisting of a customer-facing website and a secure administration dashboard.",
+      solutionPoints: [
+        "Public breeder website",
+        "Custom admin dashboard",
+        "Kitten management",
+        "Gallery management",
+        "Featured homepage listings",
+        "Responsive design",
+      ],
+      snapshot: [
+        {
+          label: "Industry",
+          value: "Pet Services",
+          icon: "badge-check",
+        },
+        {
+          label: "Platform",
+          value: "Full Stack Web Application",
+          icon: "layout-dashboard",
+        },
+        {
+          label: "Role",
+          value: "Full Stack Developer",
+          icon: "workflow",
+        },
+        {
+          label: "Duration",
+          value: "4 Weeks",
+          icon: "clock-3",
+        },
+        {
+          label: "Status",
+          value: "Production Ready",
+          icon: "shield-check",
+        },
+        {
+          label: "Team",
+          value: "Solo Project",
+          icon: "users",
+        },
+      ],
+    },
+    screenshots: [
+      {
+        id: "homepage",
+        title: "Homepage",
+        description: "Beautiful landing page introducing the breeder.",
+        image: "/works/tamysweetuk/home-herozone.png",
+      },
+      {
+        id: "featured-kittens",
+        title: "Featured Kittens",
+        description: "Homepage section showcasing featured kittens.",
+        image: "/works/tamysweetuk/home-kittensview.png",
+      },
+      {
+        id: "kitten-listing",
+        title: "Kitten Listing",
+        description: "Advanced listing page with filtering and sorting.",
+        image: "/works/tamysweetuk/kittens-sorts.png",
+      },
+      {
+        id: "admin-dashboard",
+        title: "Admin Dashboard",
+        description: "Overview dashboard for breeder management.",
+        image: "/works/tamysweetuk/admin-dashboard.png",
+      },
+      {
+        id: "add-new-kitten",
+        title: "Add New Kitten",
+        description: "Multi-step creation workflow.",
+        image: "/works/tamysweetuk/admin-addkitten.png",
+      },
+    ],
+    features: [
+      {
+        title: "Responsive Design",
+        description:
+          "The platform adapts smoothly across desktop, tablet and mobile for customers and administrators.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Kitten Management",
+        description:
+          "Breeders can create, update and organize kitten listings from the admin dashboard.",
+        icon: "settings-2",
+      },
+      {
+        title: "Availability Tracking",
+        description:
+          "Availability states help keep public listings accurate as kittens become reserved or adopted.",
+        icon: "calendar-range",
+      },
+      {
+        title: "Featured Homepage Listings",
+        description:
+          "Selected kittens can be highlighted on the homepage to guide visitors toward current availability.",
+        icon: "star",
+      },
+      {
+        title: "Gallery Management",
+        description:
+          "Image galleries can be maintained from the dashboard for richer kitten and breeder presentation.",
+        icon: "images",
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "A centralized dashboard gives the breeder control over listings, content and day-to-day updates.",
+        icon: "layout-dashboard",
+      },
+      {
+        title: "Dynamic Filtering",
+        description:
+          "Visitors can explore available kittens with filtering and sorting designed for fast discovery.",
+        icon: "search",
+      },
+      {
+        title: "SEO Friendly Pages",
+        description:
+          "Structured public pages support discoverability and a professional search presence.",
+        icon: "search",
+      },
+      {
+        title: "Secure Authentication",
+        description:
+          "Protected admin access keeps management tools and breeder operations secure.",
+        icon: "lock-keyhole",
+      },
+      {
+        title: "Supabase Database",
+        description:
+          "Supabase provides the database foundation for listings, galleries, enquiries and content updates.",
+        icon: "database",
+      },
+    ],
+    architecture: [
+      {
+        title: "Visitors",
+        description: "Public website users",
+        icon: "users",
+      },
+      {
+        title: "Next.js",
+        description: "Public site and admin UI",
+        icon: "nextjs",
+      },
+      {
+        title: "Application Layer",
+        description: "Listing and content logic",
+        icon: "workflow",
+      },
+      {
+        title: "Supabase",
+        description: "Database and authentication",
+        icon: "database",
+      },
+      {
+        title: "Media Assets",
+        description: "Kitten galleries and uploads",
+        icon: "images",
+      },
+    ],
+    techStack: [
+      {
+        label: "Frontend",
+        items: ["Next.js", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        label: "Backend",
+        items: ["Next.js", "Supabase"],
+      },
+      {
+        label: "Database",
+        items: ["Supabase", "PostgreSQL"],
+      },
+      {
+        label: "Authentication",
+        items: ["Supabase Auth"],
+      },
+      {
+        label: "Deployment",
+        items: ["Vercel"],
+      },
+    ],
+    challenges: [
+      {
+        title: "Designing for customers and breeders",
+        description:
+          "Designing an experience suitable for both customers and breeders while keeping the interface simple.",
+      },
+      {
+        title: "Synchronizing public content",
+        description:
+          "Keeping public website content synchronized with dashboard updates.",
+      },
+      {
+        title: "Keeping management simple",
+        description:
+          "Creating a clean management workflow without unnecessary complexity.",
+      },
+    ],
+    results: [
+      {
+        title: "Modern breeder website",
+        description:
+          "Modern breeder website replacing manual social media listings.",
+      },
+      {
+        title: "Fast content updates",
+        description:
+          "Fast content updates through the admin dashboard.",
+      },
+      {
+        title: "Centralized management",
+        description:
+          "Centralized management for kittens, galleries and featured content.",
+      },
+      {
+        title: "Professional responsive experience",
+        description:
+          "Professional responsive experience across desktop and mobile.",
+      },
+    ],
+    cta: {
+      title: "Future Improvements",
+      description:
+        "Online reservation workflow, payment integration, customer accounts, email notifications, analytics dashboard and multi-language support.",
+      buttonLabel: "Book a Free Consultation",
+      buttonHref: "/#contact",
+    },
+    trustSignals: [
+      {
+        title: "Production Ready",
+        description: "Built for real users and real-world impact.",
+        icon: "shield-check",
+      },
+      {
+        title: "Admin Dashboard",
+        description: "Centralized breeder management in one secure workspace.",
+        icon: "layout-dashboard",
+      },
+      {
+        title: "Responsive Design",
+        description: "Optimized for desktop, tablet and mobile browsing.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Supabase Backend",
+        description: "Database-backed content, listings and platform state.",
+        icon: "database",
+      },
+    ],
+  },
+  {
     slug: "studytask",
     title: "StudyTask",
     category: "academic",

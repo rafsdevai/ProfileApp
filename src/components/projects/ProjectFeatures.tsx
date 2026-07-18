@@ -1,5 +1,6 @@
 import {
   CalendarRange,
+  Database,
   ImageIcon,
   LayoutDashboard,
   LockKeyhole,
@@ -7,7 +8,9 @@ import {
   Search,
   ShieldCheck,
   Star,
+  Settings2,
   Utensils,
+  Workflow,
   Zap,
 } from "lucide-react";
 
@@ -30,6 +33,9 @@ const featureIconMap: Partial<Record<ProjectDetailIcon, typeof MonitorSmartphone
   "lock-keyhole": LockKeyhole,
   search: Search,
   "shield-check": ShieldCheck,
+  database: Database,
+  "settings-2": Settings2,
+  workflow: Workflow,
   zap: Zap,
 };
 

@@ -2,6 +2,856 @@ import { type ProjectDetail } from "@/src/types/project";
 
 export const projectDetails: readonly ProjectDetail[] = [
   {
+    slug: "tamysweetuk-breeder-platform",
+    title: "TamysweetUK Breeder Platform",
+    category: "business",
+    categoryLabel: "Web Application",
+    description:
+      "A complete breeder management platform featuring a public website, kitten listings, enquiries and a custom admin dashboard for managing content, availability and featured listings.",
+    cardImage: "/projects/tamysweetuk.png",
+    cardImageAlt: "TamysweetUK Breeder Platform project preview",
+    tags: ["Breeder Platform", "Kitten Listings", "Admin Dashboard"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    featured: true,
+    heroImage: "/works/tamysweetuk/hero-section.png",
+    heroImageAlt: "TamysweetUK Breeder Platform hero preview",
+    heroBadgeLabel: "BREEDER MANAGEMENT PLATFORM",
+    heroDescription:
+      "A complete breeder management platform combining a premium public website with a powerful administration dashboard for managing kitten listings, featured content, availability and breeder operations.",
+    liveDemoUrl: "https://www.tamysweetuk.co.uk/",
+    overview: {
+      problemTitle: "The Problem",
+      problemPoints: [
+        "Breeders often rely on social media and manual communication to showcase available kittens, making updates time-consuming and enquiries difficult to manage.",
+        "Managing listings, featured kittens, availability and website content across multiple tools creates unnecessary complexity.",
+        "Without a centralized system, keeping the website accurate and up to date becomes inefficient.",
+      ],
+      solutionTitle: "The Solution",
+      solutionDescription:
+        "I designed and built a complete breeder platform consisting of a customer-facing website and a secure administration dashboard.",
+      solutionPoints: [
+        "Public breeder website",
+        "Custom admin dashboard",
+        "Kitten management",
+        "Gallery management",
+        "Featured homepage listings",
+        "Responsive design",
+      ],
+      snapshot: [
+        {
+          label: "Industry",
+          value: "Pet Services",
+          icon: "badge-check",
+        },
+        {
+          label: "Platform",
+          value: "Full Stack Web Application",
+          icon: "layout-dashboard",
+        },
+        {
+          label: "Role",
+          value: "Full Stack Developer",
+          icon: "workflow",
+        },
+        {
+          label: "Duration",
+          value: "4 Weeks",
+          icon: "clock-3",
+        },
+        {
+          label: "Status",
+          value: "Production Ready",
+          icon: "shield-check",
+        },
+        {
+          label: "Team",
+          value: "Solo Project",
+          icon: "users",
+        },
+      ],
+    },
+    screenshots: [
+      {
+        id: "homepage",
+        title: "Homepage",
+        description: "Beautiful landing page introducing the breeder.",
+        image: "/works/tamysweetuk/home-herozone.png",
+      },
+      {
+        id: "featured-kittens",
+        title: "Featured Kittens",
+        description: "Homepage section showcasing featured kittens.",
+        image: "/works/tamysweetuk/home-kittensview.png",
+      },
+      {
+        id: "kitten-listing",
+        title: "Kitten Listing",
+        description: "Advanced listing page with filtering and sorting.",
+        image: "/works/tamysweetuk/kittens-sorts.png",
+      },
+      {
+        id: "admin-dashboard",
+        title: "Admin Dashboard",
+        description: "Overview dashboard for breeder management.",
+        image: "/works/tamysweetuk/admin-dashboard.png",
+      },
+      {
+        id: "add-new-kitten",
+        title: "Add New Kitten",
+        description: "Multi-step creation workflow.",
+        image: "/works/tamysweetuk/admin-addkitten.png",
+      },
+    ],
+    features: [
+      {
+        title: "Responsive Design",
+        description:
+          "The platform adapts smoothly across desktop, tablet and mobile for customers and administrators.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Kitten Management",
+        description:
+          "Breeders can create, update and organize kitten listings from the admin dashboard.",
+        icon: "settings-2",
+      },
+      {
+        title: "Availability Tracking",
+        description:
+          "Availability states help keep public listings accurate as kittens become reserved or adopted.",
+        icon: "calendar-range",
+      },
+      {
+        title: "Featured Homepage Listings",
+        description:
+          "Selected kittens can be highlighted on the homepage to guide visitors toward current availability.",
+        icon: "star",
+      },
+      {
+        title: "Gallery Management",
+        description:
+          "Image galleries can be maintained from the dashboard for richer kitten and breeder presentation.",
+        icon: "images",
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "A centralized dashboard gives the breeder control over listings, content and day-to-day updates.",
+        icon: "layout-dashboard",
+      },
+      {
+        title: "Dynamic Filtering",
+        description:
+          "Visitors can explore available kittens with filtering and sorting designed for fast discovery.",
+        icon: "search",
+      },
+      {
+        title: "SEO Friendly Pages",
+        description:
+          "Structured public pages support discoverability and a professional search presence.",
+        icon: "search",
+      },
+      {
+        title: "Secure Authentication",
+        description:
+          "Protected admin access keeps management tools and breeder operations secure.",
+        icon: "lock-keyhole",
+      },
+      {
+        title: "Supabase Database",
+        description:
+          "Supabase provides the database foundation for listings, galleries, enquiries and content updates.",
+        icon: "database",
+      },
+    ],
+    architecture: [
+      {
+        title: "Visitors",
+        description: "Public website users",
+        icon: "users",
+      },
+      {
+        title: "Next.js",
+        description: "Public site and admin UI",
+        icon: "nextjs",
+      },
+      {
+        title: "Application Layer",
+        description: "Listing and content logic",
+        icon: "workflow",
+      },
+      {
+        title: "Supabase",
+        description: "Database and authentication",
+        icon: "database",
+      },
+      {
+        title: "Media Assets",
+        description: "Kitten galleries and uploads",
+        icon: "images",
+      },
+    ],
+    techStack: [
+      {
+        label: "Frontend",
+        items: ["Next.js", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        label: "Backend",
+        items: ["Next.js", "Supabase"],
+      },
+      {
+        label: "Database",
+        items: ["Supabase", "PostgreSQL"],
+      },
+      {
+        label: "Authentication",
+        items: ["Supabase Auth"],
+      },
+      {
+        label: "Deployment",
+        items: ["Vercel"],
+      },
+    ],
+    challenges: [
+      {
+        title: "Designing for customers and breeders",
+        description:
+          "Designing an experience suitable for both customers and breeders while keeping the interface simple.",
+      },
+      {
+        title: "Synchronizing public content",
+        description:
+          "Keeping public website content synchronized with dashboard updates.",
+      },
+      {
+        title: "Keeping management simple",
+        description:
+          "Creating a clean management workflow without unnecessary complexity.",
+      },
+    ],
+    results: [
+      {
+        title: "Modern breeder website",
+        description:
+          "Modern breeder website replacing manual social media listings.",
+      },
+      {
+        title: "Fast content updates",
+        description:
+          "Fast content updates through the admin dashboard.",
+      },
+      {
+        title: "Centralized management",
+        description:
+          "Centralized management for kittens, galleries and featured content.",
+      },
+      {
+        title: "Professional responsive experience",
+        description:
+          "Professional responsive experience across desktop and mobile.",
+      },
+    ],
+    cta: {
+      title: "Future Improvements",
+      description:
+        "Online reservation workflow, payment integration, customer accounts, email notifications, analytics dashboard and multi-language support.",
+      buttonLabel: "Book a Free Consultation",
+      buttonHref: "/#contact",
+    },
+    trustSignals: [
+      {
+        title: "Production Ready",
+        description: "Built for real users and real-world impact.",
+        icon: "shield-check",
+      },
+      {
+        title: "Admin Dashboard",
+        description: "Centralized breeder management in one secure workspace.",
+        icon: "layout-dashboard",
+      },
+      {
+        title: "Responsive Design",
+        description: "Optimized for desktop, tablet and mobile browsing.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Supabase Backend",
+        description: "Database-backed content, listings and platform state.",
+        icon: "database",
+      },
+    ],
+  },
+  {
+    slug: "agrocommerce",
+    title: "AgroCommerce",
+    category: "ecommerce",
+    categoryLabel: "E-commerce Platform",
+    description:
+      "A full-stack agricultural catalog with product management, quote requests and validated Excel imports.",
+    cardImage: "/projects/agrocommerce.png",
+    cardImageAlt: "AgroCommerce project preview showing agricultural product catalog",
+    tags: ["Next.js", "Supabase", "TypeScript"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Vercel", "Excel / CSV Import"],
+    featured: false,
+    heroImage: "/works/agrocommerce/hero-img-agro.png",
+    heroImageAlt: "AgroCommerce hero preview showcasing agricultural commerce platform",
+    heroBadgeLabel: "AGRICULTURAL COMMERCE PLATFORM",
+    heroDescription:
+      "A full-stack agricultural catalog and product management platform combining a modern public storefront with a secure administration dashboard, quote request management and an Excel import workflow.",
+    heroTitleLines: ["AgroCommerce"],
+    liveDemoUrl: "https://agrocommerce-phi.vercel.app/",
+    overview: {
+      problemTitle: "The Problem",
+      problemPoints: [
+        "Agricultural retailers often manage product information across spreadsheets, social media and phone conversations.",
+        "Updating many products manually is slow and increases the chance of inconsistent prices, stock values and descriptions.",
+        "Customers cannot easily search and compare the available catalog without a centralized website.",
+        "Quote requests become difficult to track when they are handled only through calls and messages.",
+      ],
+      solutionTitle: "The Solution",
+      solutionDescription:
+        "I designed and built a full-stack agricultural commerce platform that combines a public product catalog with a dedicated administration dashboard.",
+      solutionPoints: [
+        "Public agricultural product catalog",
+        "Product search, filtering and sorting",
+        "Detailed product pages",
+        "Quote request workflow",
+        "Product administration",
+        "Excel and CSV import preview",
+        "SKU-based product updates",
+        "Row-level import validation",
+        "Quote request management",
+        "Supabase-backed data management",
+        "Responsive public and administration interfaces",
+      ],
+      snapshot: [
+        {
+          label: "Industry",
+          value: "Agriculture / Commerce",
+          icon: "badge-check",
+        },
+        {
+          label: "Platform",
+          value: "Full Stack Web Application",
+          icon: "layout-dashboard",
+        },
+        {
+          label: "Role",
+          value: "Full Stack Developer",
+          icon: "workflow",
+        },
+        {
+          label: "Status",
+          value: "Functional Portfolio Demo",
+          icon: "shield-check",
+        },
+        {
+          label: "Team",
+          value: "Solo Project",
+          icon: "users",
+        },
+      ],
+    },
+    screenshots: [
+      {
+        id: "homepage",
+        title: "Homepage",
+        description:
+          "Modern landing page presenting the agricultural catalog, main categories and recommended products.",
+        image: "/works/agrocommerce/Homepage.png",
+      },
+      {
+        id: "product-catalog",
+        title: "Product Catalog",
+        description:
+          "Searchable product listing with category, brand and availability filters.",
+        image: "/works/agrocommerce/Product Catalog.png",
+      },
+      {
+        id: "product-details",
+        title: "Product Details",
+        description:
+          "Detailed product page with pricing, availability, SKU, specifications and related products.",
+        image: "/works/agrocommerce/Product Details.png",
+      },
+      {
+        id: "quote-request",
+        title: "Quote Request",
+        description:
+          "A quote request flow where visitors can review selected products and quantities.",
+        image: "/works/agrocommerce/Quote Request.png",
+      },
+      {
+        id: "admin-dashboard",
+        title: "Admin Dashboard",
+        description:
+          "Centralized overview of published products, drafts, quote requests and recent imports.",
+        image: "/works/agrocommerce/Admin Dashboard.png",
+      },
+      {
+        id: "product-management",
+        title: "Product Management",
+        description:
+          "Administration interface for searching, filtering and managing published, draft and archived products.",
+        image: "/works/agrocommerce/Product Management.png",
+      },
+      {
+        id: "quote-management",
+        title: "Quote Management",
+        description:
+          "Customer quote request management with contact information, requested products and status updates.",
+        image: "/works/agrocommerce/Quote Management.png",
+      },
+      {
+        id: "excel-import-preview",
+        title: "Excel Import Preview",
+        description:
+          "Bulk product import with row validation, warnings, errors, preview and SKU-based updates.",
+        image: "/works/agrocommerce/Excel Import Preview.png",
+      },
+    ],
+    features: [
+      {
+        title: "Responsive Design",
+        description:
+          "The interface adapts across desktop, tablet and mobile for customers and administrators.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Public Product Catalog",
+        description:
+          "Published products can be explored through categories, search, filtering and sorting.",
+        icon: "layout-dashboard",
+      },
+      {
+        title: "Product Detail Pages",
+        description:
+          "Each product can display pricing, availability, SKU, specifications and related products.",
+        icon: "search",
+      },
+      {
+        title: "Quote Request Workflow",
+        description:
+          "Visitors can select products and submit a structured quote request instead of completing an online checkout.",
+        icon: "workflow",
+      },
+      {
+        title: "Product Management",
+        description:
+          "Administrators can search, filter and manage published, draft and archived products.",
+        icon: "shopping-cart",
+      },
+      {
+        title: "Excel Import Preview",
+        description:
+          "CSV and XLSX files are validated and previewed before product data is confirmed.",
+        icon: "bar-chart-3",
+      },
+      {
+        title: "SKU-Based Updates",
+        description:
+          "Existing products are matched and updated using their unique SKU rather than the product name.",
+        icon: "workflow",
+      },
+      {
+        title: "Import Validation",
+        description:
+          "Rows are classified with warnings and errors before import confirmation.",
+        icon: "shield-check",
+      },
+      {
+        title: "Quote Management",
+        description:
+          "Administrators can review contact details, requested products and update request statuses.",
+        icon: "users",
+      },
+      {
+        title: "Supabase Backend",
+        description:
+          "Supabase provides the PostgreSQL-backed data foundation for products, imports and quote requests.",
+        icon: "database",
+      },
+      {
+        title: "Secure Administration",
+        description:
+          "Administrative functionality is separated from the public catalog through the existing authentication and authorization flow.",
+        icon: "lock-keyhole",
+      },
+    ],
+    challenges: [
+      {
+        title: "Managing different product states",
+        description:
+          "Supporting published, draft and archived products while ensuring only appropriate products are visible publicly.",
+      },
+      {
+        title: "Safe bulk product updates",
+        description:
+          "Designing an import workflow that validates rows and previews changes before updating product data.",
+      },
+      {
+        title: "Reliable product matching",
+        description:
+          "Using SKU as the unique identifier for imports instead of relying on product names.",
+      },
+      {
+        title: "Combining catalog and quote workflows",
+        description:
+          "Supporting visible prices and quote-based product enquiries without creating an unnecessarily complex checkout experience.",
+      },
+    ],
+    results: [
+      {
+        title: "Centralized Product Catalog",
+        description:
+          "Public product information is presented through one searchable and filterable catalog.",
+      },
+      {
+        title: "Structured Product Management",
+        description:
+          "Products, publication states and availability can be managed from a dedicated administration interface.",
+      },
+      {
+        title: "Validated Bulk Import",
+        description:
+          "Product files can be reviewed through a preview containing row-level warnings and errors before confirmation.",
+      },
+      {
+        title: "Centralized Quote Requests",
+        description:
+          "Customer enquiries and requested products are available through one administrative workflow.",
+      },
+      {
+        title: "Responsive Experience",
+        description:
+          "The public and administration interfaces are designed for desktop and smaller screens.",
+      },
+    ],
+    cta: {
+      title: "Planning a custom commerce platform?",
+      description:
+        "I build tailored web applications for businesses that need structured product management, custom workflows and scalable digital platforms.",
+      buttonLabel: "Book a Free Consultation",
+      buttonHref: "/#contact",
+    },
+    trustSignals: [
+      {
+        title: "Full Stack Platform",
+        description: "Public catalog and administration dashboard in one application.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Excel Import Workflow",
+        description: "Product validation, preview and SKU-based updates.",
+        icon: "bar-chart-3",
+      },
+      {
+        title: "Supabase Backend",
+        description: "PostgreSQL-backed products, imports and quote request data.",
+        icon: "database",
+      },
+      {
+        title: "Responsive Design",
+        description: "Optimized for desktop, tablet and mobile.",
+        icon: "shield-check",
+      },
+    ],
+  },
+  {
+    slug: "serele-stefanache",
+    title: "Serele Stefanache",
+    category: "business",
+    categoryLabel: "Agriculture & Family Business",
+    description:
+      "A modern presentation website for a family-owned greenhouse business showcasing flowers, seedlings, vegetables and seasonal products with an elegant gallery, responsive design and direct WhatsApp contact.",
+    cardImage: "/projects/serele.png",
+    cardImageAlt: "Serele Stefanache project preview",
+    tags: ["Agriculture", "Family Business", "Presentation Website"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "SEO"],
+    featured: true,
+    heroImage: "/works/serele-stefanache/herosection_serele.png",
+    heroImageAlt: "Serele Stefanache hero preview",
+    heroTitleLines: ["Serele", "Stefanache"],
+    liveDemoUrl: "https://serele-stefanache.ro/",
+    githubUrl: "https://github.com/RafaelDevLabs/SereStefanache",
+    overview: {
+      problemTitle: "The Problem",
+      problemPoints: [
+        "Traditional greenhouse businesses often rely on Facebook posts or word of mouth, making it difficult for customers to discover products and seasonal availability.",
+        "Customers need a simple way to explore flowers, seedlings and vegetables before visiting.",
+        "The business lacked a modern online presence that reflected the quality of its products.",
+        "There was no structured gallery or easy way to contact the business directly.",
+      ],
+      solutionTitle: "The Solution",
+      solutionDescription:
+        "Designed and developed a modern presentation website focused on showcasing seasonal products and improving customer trust.",
+      solutionPoints: [
+        "Elegant responsive landing page",
+        "Seasonal product presentation",
+        "Flower and vegetable galleries",
+        "Family business presentation",
+        "WhatsApp integration",
+        "Mobile-first responsive experience",
+        "Fast loading performance",
+        "SEO friendly structure",
+      ],
+      snapshot: [
+        {
+          label: "Industry",
+          value: "Agriculture",
+          icon: "badge-check",
+        },
+        {
+          label: "Platform",
+          value: "Business Website",
+          icon: "layout-dashboard",
+        },
+        {
+          label: "Role",
+          value: "Full Stack Developer",
+          icon: "workflow",
+        },
+        {
+          label: "Duration",
+          value: "1 Week",
+          icon: "clock-3",
+        },
+        {
+          label: "Status",
+          value: "Production Ready",
+          icon: "shield-check",
+        },
+        {
+          label: "Team",
+          value: "Solo Project",
+          icon: "users",
+        },
+      ],
+    },
+    screenshots: [
+      {
+        id: "homepage",
+        title: "Homepage",
+        description:
+          "A clean landing page introducing the greenhouse business and its seasonal offer.",
+        image: "/works/serele-stefanache/home-serele.png",
+      },
+      {
+        id: "about-us",
+        title: "About Us",
+        description:
+          "A family-business presentation designed to build trust and communicate the story behind the greenhouse.",
+        image: "/works/serele-stefanache/about-serele.png",
+      },
+      {
+        id: "greenhouse-gallery",
+        title: "Greenhouse Gallery",
+        description:
+          "An elegant visual gallery showcasing the greenhouse environment and product quality.",
+        image: "/works/serele-stefanache/galerie.png",
+      },
+      {
+        id: "seasonal-products",
+        title: "Seasonal Products",
+        description:
+          "Seasonal collections help customers explore flowers, seedlings and vegetables more easily.",
+        image: "/works/serele-stefanache/colectii.png",
+      },
+      {
+        id: "contact",
+        title: "Contact",
+        description:
+          "Direct contact options and WhatsApp integration make communication simple and immediate.",
+        image: "/works/serele-stefanache/contact.png",
+      },
+    ],
+    features: [
+      {
+        title: "Responsive Website",
+        description:
+          "The website adapts smoothly across desktop, tablet and mobile for local customers on any device.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "Seasonal Product Showcase",
+        description:
+          "Seasonal products are presented clearly so customers can explore current offerings before visiting.",
+        icon: "images",
+      },
+      {
+        title: "Flowers Gallery",
+        description:
+          "A dedicated visual presentation highlights flowers and decorative arrangements with a polished look.",
+        icon: "images",
+      },
+      {
+        title: "Vegetable Presentation",
+        description:
+          "Vegetables and seedlings are organized in a simple presentation flow that improves discoverability.",
+        icon: "images",
+      },
+      {
+        title: "Family Business Story",
+        description:
+          "The brand story builds trust and gives the business a warmer, more personal digital presence.",
+        icon: "users",
+      },
+      {
+        title: "WhatsApp Contact",
+        description:
+          "Direct WhatsApp contact gives customers a fast and familiar way to get in touch.",
+        icon: "smartphone",
+      },
+      {
+        title: "SEO Optimized",
+        description:
+          "The structure is prepared for discoverability with search-friendly pages and content hierarchy.",
+        icon: "search",
+      },
+      {
+        title: "Fast Performance",
+        description:
+          "A lightweight implementation keeps the browsing experience quick and responsive.",
+        icon: "zap",
+      },
+      {
+        title: "Mobile Friendly",
+        description:
+          "The presentation and galleries remain easy to browse on smaller screens.",
+        icon: "monitor-smartphone",
+      },
+    ],
+    architecture: [
+      {
+        title: "Users",
+        description: "Site visitors",
+        icon: "users",
+      },
+      {
+        title: "Next.js",
+        description: "Frontend framework",
+        icon: "nextjs",
+      },
+      {
+        title: "Application Layer",
+        description: "Presentation logic",
+        icon: "workflow",
+      },
+      {
+        title: "Static Assets",
+        description: "Images and content",
+        icon: "images",
+      },
+      {
+        title: "Deployment",
+        description: "Production hosting",
+        icon: "shield-check",
+      },
+    ],
+    techStack: [
+      {
+        label: "Frontend",
+        items: ["Next.js", "TypeScript", "Tailwind CSS"],
+      },
+      {
+        label: "Backend",
+        items: ["Next.js"],
+      },
+      {
+        label: "Database",
+        items: ["None"],
+      },
+      {
+        label: "Deployment",
+        items: ["Vercel"],
+      },
+    ],
+    challenges: [
+      {
+        title: "Keeping the presentation elegant and lightweight",
+        description:
+          "The site needed to feel polished without becoming heavy or slow for everyday visitors.",
+      },
+      {
+        title: "Organizing seasonal content clearly",
+        description:
+          "Seasonal products had to be easy to browse without overwhelming the user with too much information.",
+      },
+      {
+        title: "Designing a responsive gallery experience",
+        description:
+          "The gallery needed to stay visually strong across desktop and mobile screens.",
+      },
+      {
+        title: "Building trust for a local family business",
+        description:
+          "The website had to communicate quality, warmth and credibility for first-time customers.",
+      },
+    ],
+    results: [
+      {
+        title: "Professional online presence",
+        description:
+          "The business now has a polished digital presence aligned with the quality of its products.",
+      },
+      {
+        title: "Improved customer trust",
+        description:
+          "Clear presentation and business storytelling help customers feel more confident before visiting.",
+      },
+      {
+        title: "Better product presentation",
+        description:
+          "Flowers, seedlings, vegetables and seasonal products are easier to discover and explore.",
+      },
+      {
+        title: "Easy communication through WhatsApp",
+        description:
+          "Direct contact options reduce friction for customers who want fast answers.",
+      },
+      {
+        title: "Mobile friendly experience",
+        description:
+          "The site remains easy to browse on phones, where many local visitors first discover the business.",
+      },
+      {
+        title: "SEO ready website",
+        description:
+          "The structure supports better discoverability and a stronger search presence over time.",
+      },
+    ],
+    cta: {
+      title: "Ready to build something similar?",
+      description:
+        "Let's create a polished business website with clear product presentation, direct contact flows and production-ready performance.",
+      buttonLabel: "Book a Free Consultation",
+      buttonHref: "/#contact",
+    },
+    trustSignals: [
+      {
+        title: "Production Ready",
+        description: "Built for real users and real-world impact.",
+        icon: "shield-check",
+      },
+      {
+        title: "Responsive Design",
+        description: "Optimized for desktop, tablet and mobile browsing.",
+        icon: "monitor-smartphone",
+      },
+      {
+        title: "SEO Optimized",
+        description: "Structured for search visibility and clean discoverability.",
+        icon: "search",
+      },
+      {
+        title: "Fast Loading",
+        description: "Lightweight implementation focused on quick page delivery.",
+        icon: "zap",
+      },
+    ],
+  },
+  {
     slug: "restaurant-qr-menu",
     title: "Restaurant QR Menu",
     category: "food-hospitality",
@@ -1359,580 +2209,6 @@ export const projectDetails: readonly ProjectDetail[] = [
         title: "Ongoing Support",
         description: "Long-term maintenance and continuous improvement.",
         icon: "users",
-      },
-    ],
-  },
-  {
-    slug: "serele-stefanache",
-    title: "Serele Stefanache",
-    category: "business",
-    categoryLabel: "Agriculture & Family Business",
-    description:
-      "A modern presentation website for a family-owned greenhouse business showcasing flowers, seedlings, vegetables and seasonal products with an elegant gallery, responsive design and direct WhatsApp contact.",
-    cardImage: "/projects/serele.png",
-    cardImageAlt: "Serele Stefanache project preview",
-    tags: ["Agriculture", "Family Business", "Presentation Website"],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "SEO"],
-    featured: true,
-    heroImage: "/works/serele-stefanache/herosection_serele.png",
-    heroImageAlt: "Serele Stefanache hero preview",
-    heroTitleLines: ["Serele", "Stefanache"],
-    liveDemoUrl: "https://serele-stefanache.ro/",
-    githubUrl: "https://github.com/RafaelDevLabs/SereStefanache",
-    overview: {
-      problemTitle: "The Problem",
-      problemPoints: [
-        "Traditional greenhouse businesses often rely on Facebook posts or word of mouth, making it difficult for customers to discover products and seasonal availability.",
-        "Customers need a simple way to explore flowers, seedlings and vegetables before visiting.",
-        "The business lacked a modern online presence that reflected the quality of its products.",
-        "There was no structured gallery or easy way to contact the business directly.",
-      ],
-      solutionTitle: "The Solution",
-      solutionDescription:
-        "Designed and developed a modern presentation website focused on showcasing seasonal products and improving customer trust.",
-      solutionPoints: [
-        "Elegant responsive landing page",
-        "Seasonal product presentation",
-        "Flower and vegetable galleries",
-        "Family business presentation",
-        "WhatsApp integration",
-        "Mobile-first responsive experience",
-        "Fast loading performance",
-        "SEO friendly structure",
-      ],
-      snapshot: [
-        {
-          label: "Industry",
-          value: "Agriculture",
-          icon: "badge-check",
-        },
-        {
-          label: "Platform",
-          value: "Business Website",
-          icon: "layout-dashboard",
-        },
-        {
-          label: "Role",
-          value: "Full Stack Developer",
-          icon: "workflow",
-        },
-        {
-          label: "Duration",
-          value: "1 Week",
-          icon: "clock-3",
-        },
-        {
-          label: "Status",
-          value: "Production Ready",
-          icon: "shield-check",
-        },
-        {
-          label: "Team",
-          value: "Solo Project",
-          icon: "users",
-        },
-      ],
-    },
-    screenshots: [
-      {
-        id: "homepage",
-        title: "Homepage",
-        description:
-          "A clean landing page introducing the greenhouse business and its seasonal offer.",
-        image: "/works/serele-stefanache/home-serele.png",
-      },
-      {
-        id: "about-us",
-        title: "About Us",
-        description:
-          "A family-business presentation designed to build trust and communicate the story behind the greenhouse.",
-        image: "/works/serele-stefanache/about-serele.png",
-      },
-      {
-        id: "greenhouse-gallery",
-        title: "Greenhouse Gallery",
-        description:
-          "An elegant visual gallery showcasing the greenhouse environment and product quality.",
-        image: "/works/serele-stefanache/galerie.png",
-      },
-      {
-        id: "seasonal-products",
-        title: "Seasonal Products",
-        description:
-          "Seasonal collections help customers explore flowers, seedlings and vegetables more easily.",
-        image: "/works/serele-stefanache/colectii.png",
-      },
-      {
-        id: "contact",
-        title: "Contact",
-        description:
-          "Direct contact options and WhatsApp integration make communication simple and immediate.",
-        image: "/works/serele-stefanache/contact.png",
-      },
-    ],
-    features: [
-      {
-        title: "Responsive Website",
-        description:
-          "The website adapts smoothly across desktop, tablet and mobile for local customers on any device.",
-        icon: "monitor-smartphone",
-      },
-      {
-        title: "Seasonal Product Showcase",
-        description:
-          "Seasonal products are presented clearly so customers can explore current offerings before visiting.",
-        icon: "images",
-      },
-      {
-        title: "Flowers Gallery",
-        description:
-          "A dedicated visual presentation highlights flowers and decorative arrangements with a polished look.",
-        icon: "images",
-      },
-      {
-        title: "Vegetable Presentation",
-        description:
-          "Vegetables and seedlings are organized in a simple presentation flow that improves discoverability.",
-        icon: "images",
-      },
-      {
-        title: "Family Business Story",
-        description:
-          "The brand story builds trust and gives the business a warmer, more personal digital presence.",
-        icon: "users",
-      },
-      {
-        title: "WhatsApp Contact",
-        description:
-          "Direct WhatsApp contact gives customers a fast and familiar way to get in touch.",
-        icon: "smartphone",
-      },
-      {
-        title: "SEO Optimized",
-        description:
-          "The structure is prepared for discoverability with search-friendly pages and content hierarchy.",
-        icon: "search",
-      },
-      {
-        title: "Fast Performance",
-        description:
-          "A lightweight implementation keeps the browsing experience quick and responsive.",
-        icon: "zap",
-      },
-      {
-        title: "Mobile Friendly",
-        description:
-          "The presentation and galleries remain easy to browse on smaller screens.",
-        icon: "monitor-smartphone",
-      },
-    ],
-    architecture: [
-      {
-        title: "Users",
-        description: "Site visitors",
-        icon: "users",
-      },
-      {
-        title: "Next.js",
-        description: "Frontend framework",
-        icon: "nextjs",
-      },
-      {
-        title: "Application Layer",
-        description: "Presentation logic",
-        icon: "workflow",
-      },
-      {
-        title: "Static Assets",
-        description: "Images and content",
-        icon: "images",
-      },
-      {
-        title: "Deployment",
-        description: "Production hosting",
-        icon: "shield-check",
-      },
-    ],
-    techStack: [
-      {
-        label: "Frontend",
-        items: ["Next.js", "TypeScript", "Tailwind CSS"],
-      },
-      {
-        label: "Backend",
-        items: ["Next.js"],
-      },
-      {
-        label: "Database",
-        items: ["None"],
-      },
-      {
-        label: "Deployment",
-        items: ["Vercel"],
-      },
-    ],
-    challenges: [
-      {
-        title: "Keeping the presentation elegant and lightweight",
-        description:
-          "The site needed to feel polished without becoming heavy or slow for everyday visitors.",
-      },
-      {
-        title: "Organizing seasonal content clearly",
-        description:
-          "Seasonal products had to be easy to browse without overwhelming the user with too much information.",
-      },
-      {
-        title: "Designing a responsive gallery experience",
-        description:
-          "The gallery needed to stay visually strong across desktop and mobile screens.",
-      },
-      {
-        title: "Building trust for a local family business",
-        description:
-          "The website had to communicate quality, warmth and credibility for first-time customers.",
-      },
-    ],
-    results: [
-      {
-        title: "Professional online presence",
-        description:
-          "The business now has a polished digital presence aligned with the quality of its products.",
-      },
-      {
-        title: "Improved customer trust",
-        description:
-          "Clear presentation and business storytelling help customers feel more confident before visiting.",
-      },
-      {
-        title: "Better product presentation",
-        description:
-          "Flowers, seedlings, vegetables and seasonal products are easier to discover and explore.",
-      },
-      {
-        title: "Easy communication through WhatsApp",
-        description:
-          "Direct contact options reduce friction for customers who want fast answers.",
-      },
-      {
-        title: "Mobile friendly experience",
-        description:
-          "The site remains easy to browse on phones, where many local visitors first discover the business.",
-      },
-      {
-        title: "SEO ready website",
-        description:
-          "The structure supports better discoverability and a stronger search presence over time.",
-      },
-    ],
-    cta: {
-      title: "Ready to build something similar?",
-      description:
-        "Let's create a polished business website with clear product presentation, direct contact flows and production-ready performance.",
-      buttonLabel: "Book a Free Consultation",
-      buttonHref: "/#contact",
-    },
-    trustSignals: [
-      {
-        title: "Production Ready",
-        description: "Built for real users and real-world impact.",
-        icon: "shield-check",
-      },
-      {
-        title: "Responsive Design",
-        description: "Optimized for desktop, tablet and mobile browsing.",
-        icon: "monitor-smartphone",
-      },
-      {
-        title: "SEO Optimized",
-        description: "Structured for search visibility and clean discoverability.",
-        icon: "search",
-      },
-      {
-        title: "Fast Loading",
-        description: "Lightweight implementation focused on quick page delivery.",
-        icon: "zap",
-      },
-    ],
-  },
-  {
-    slug: "tamysweetuk-breeder-platform",
-    title: "TamysweetUK Breeder Platform",
-    category: "business",
-    categoryLabel: "Web Application",
-    description:
-      "A complete breeder management platform featuring a public website, kitten listings, enquiries and a custom admin dashboard for managing content, availability and featured listings.",
-    cardImage: "/projects/tamysweetuk.png",
-    cardImageAlt: "TamysweetUK Breeder Platform project preview",
-    tags: ["Breeder Platform", "Kitten Listings", "Admin Dashboard"],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    featured: true,
-    heroImage: "/works/tamysweetuk/hero-section.png",
-    heroImageAlt: "TamysweetUK Breeder Platform hero preview",
-    heroBadgeLabel: "BREEDER MANAGEMENT PLATFORM",
-    heroDescription:
-      "A complete breeder management platform combining a premium public website with a powerful administration dashboard for managing kitten listings, featured content, availability and breeder operations.",
-    liveDemoUrl: "https://www.tamysweetuk.co.uk/",
-    overview: {
-      problemTitle: "The Problem",
-      problemPoints: [
-        "Breeders often rely on social media and manual communication to showcase available kittens, making updates time-consuming and enquiries difficult to manage.",
-        "Managing listings, featured kittens, availability and website content across multiple tools creates unnecessary complexity.",
-        "Without a centralized system, keeping the website accurate and up to date becomes inefficient.",
-      ],
-      solutionTitle: "The Solution",
-      solutionDescription:
-        "I designed and built a complete breeder platform consisting of a customer-facing website and a secure administration dashboard.",
-      solutionPoints: [
-        "Public breeder website",
-        "Custom admin dashboard",
-        "Kitten management",
-        "Gallery management",
-        "Featured homepage listings",
-        "Responsive design",
-      ],
-      snapshot: [
-        {
-          label: "Industry",
-          value: "Pet Services",
-          icon: "badge-check",
-        },
-        {
-          label: "Platform",
-          value: "Full Stack Web Application",
-          icon: "layout-dashboard",
-        },
-        {
-          label: "Role",
-          value: "Full Stack Developer",
-          icon: "workflow",
-        },
-        {
-          label: "Duration",
-          value: "4 Weeks",
-          icon: "clock-3",
-        },
-        {
-          label: "Status",
-          value: "Production Ready",
-          icon: "shield-check",
-        },
-        {
-          label: "Team",
-          value: "Solo Project",
-          icon: "users",
-        },
-      ],
-    },
-    screenshots: [
-      {
-        id: "homepage",
-        title: "Homepage",
-        description: "Beautiful landing page introducing the breeder.",
-        image: "/works/tamysweetuk/home-herozone.png",
-      },
-      {
-        id: "featured-kittens",
-        title: "Featured Kittens",
-        description: "Homepage section showcasing featured kittens.",
-        image: "/works/tamysweetuk/home-kittensview.png",
-      },
-      {
-        id: "kitten-listing",
-        title: "Kitten Listing",
-        description: "Advanced listing page with filtering and sorting.",
-        image: "/works/tamysweetuk/kittens-sorts.png",
-      },
-      {
-        id: "admin-dashboard",
-        title: "Admin Dashboard",
-        description: "Overview dashboard for breeder management.",
-        image: "/works/tamysweetuk/admin-dashboard.png",
-      },
-      {
-        id: "add-new-kitten",
-        title: "Add New Kitten",
-        description: "Multi-step creation workflow.",
-        image: "/works/tamysweetuk/admin-addkitten.png",
-      },
-    ],
-    features: [
-      {
-        title: "Responsive Design",
-        description:
-          "The platform adapts smoothly across desktop, tablet and mobile for customers and administrators.",
-        icon: "monitor-smartphone",
-      },
-      {
-        title: "Kitten Management",
-        description:
-          "Breeders can create, update and organize kitten listings from the admin dashboard.",
-        icon: "settings-2",
-      },
-      {
-        title: "Availability Tracking",
-        description:
-          "Availability states help keep public listings accurate as kittens become reserved or adopted.",
-        icon: "calendar-range",
-      },
-      {
-        title: "Featured Homepage Listings",
-        description:
-          "Selected kittens can be highlighted on the homepage to guide visitors toward current availability.",
-        icon: "star",
-      },
-      {
-        title: "Gallery Management",
-        description:
-          "Image galleries can be maintained from the dashboard for richer kitten and breeder presentation.",
-        icon: "images",
-      },
-      {
-        title: "Admin Dashboard",
-        description:
-          "A centralized dashboard gives the breeder control over listings, content and day-to-day updates.",
-        icon: "layout-dashboard",
-      },
-      {
-        title: "Dynamic Filtering",
-        description:
-          "Visitors can explore available kittens with filtering and sorting designed for fast discovery.",
-        icon: "search",
-      },
-      {
-        title: "SEO Friendly Pages",
-        description:
-          "Structured public pages support discoverability and a professional search presence.",
-        icon: "search",
-      },
-      {
-        title: "Secure Authentication",
-        description:
-          "Protected admin access keeps management tools and breeder operations secure.",
-        icon: "lock-keyhole",
-      },
-      {
-        title: "Supabase Database",
-        description:
-          "Supabase provides the database foundation for listings, galleries, enquiries and content updates.",
-        icon: "database",
-      },
-    ],
-    architecture: [
-      {
-        title: "Visitors",
-        description: "Public website users",
-        icon: "users",
-      },
-      {
-        title: "Next.js",
-        description: "Public site and admin UI",
-        icon: "nextjs",
-      },
-      {
-        title: "Application Layer",
-        description: "Listing and content logic",
-        icon: "workflow",
-      },
-      {
-        title: "Supabase",
-        description: "Database and authentication",
-        icon: "database",
-      },
-      {
-        title: "Media Assets",
-        description: "Kitten galleries and uploads",
-        icon: "images",
-      },
-    ],
-    techStack: [
-      {
-        label: "Frontend",
-        items: ["Next.js", "TypeScript", "Tailwind CSS"],
-      },
-      {
-        label: "Backend",
-        items: ["Next.js", "Supabase"],
-      },
-      {
-        label: "Database",
-        items: ["Supabase", "PostgreSQL"],
-      },
-      {
-        label: "Authentication",
-        items: ["Supabase Auth"],
-      },
-      {
-        label: "Deployment",
-        items: ["Vercel"],
-      },
-    ],
-    challenges: [
-      {
-        title: "Designing for customers and breeders",
-        description:
-          "Designing an experience suitable for both customers and breeders while keeping the interface simple.",
-      },
-      {
-        title: "Synchronizing public content",
-        description:
-          "Keeping public website content synchronized with dashboard updates.",
-      },
-      {
-        title: "Keeping management simple",
-        description:
-          "Creating a clean management workflow without unnecessary complexity.",
-      },
-    ],
-    results: [
-      {
-        title: "Modern breeder website",
-        description:
-          "Modern breeder website replacing manual social media listings.",
-      },
-      {
-        title: "Fast content updates",
-        description:
-          "Fast content updates through the admin dashboard.",
-      },
-      {
-        title: "Centralized management",
-        description:
-          "Centralized management for kittens, galleries and featured content.",
-      },
-      {
-        title: "Professional responsive experience",
-        description:
-          "Professional responsive experience across desktop and mobile.",
-      },
-    ],
-    cta: {
-      title: "Future Improvements",
-      description:
-        "Online reservation workflow, payment integration, customer accounts, email notifications, analytics dashboard and multi-language support.",
-      buttonLabel: "Book a Free Consultation",
-      buttonHref: "/#contact",
-    },
-    trustSignals: [
-      {
-        title: "Production Ready",
-        description: "Built for real users and real-world impact.",
-        icon: "shield-check",
-      },
-      {
-        title: "Admin Dashboard",
-        description: "Centralized breeder management in one secure workspace.",
-        icon: "layout-dashboard",
-      },
-      {
-        title: "Responsive Design",
-        description: "Optimized for desktop, tablet and mobile browsing.",
-        icon: "monitor-smartphone",
-      },
-      {
-        title: "Supabase Backend",
-        description: "Database-backed content, listings and platform state.",
-        icon: "database",
       },
     ],
   },
